@@ -76,5 +76,10 @@ def main_screen():
    | | | | | |  __/ |  _  | (_| | | | | (_| | | | | | | (_| | | | |
    |_| |_| |_|\___| |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                                        |___/                       """)
+    print ('Welcome to The Hangman')
+    print('Would you like to play? Press Y')
+    print('Change difficult? Press D')
+    first_option = input('Choose your option: ')
+    print(first_option)
 
 main_screen()
