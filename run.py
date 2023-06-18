@@ -77,15 +77,21 @@ def main_screen():
    |_| |_| |_|\___| |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                                        |___/                       """)
     print ('WELCOME TO THE HANGMAN')
-    print('Would you like to play? Press Y')
-    print('Change difficult? Press D')
+    print('Would you like to play? Press 1')
+    print('Change difficult? Press 2')
     first_option = input('Choose your option: ')
     check_answer(first_option)
 
 def check_answer(data):
-    if data.lower() == 'y' or data.lower() == 'd':
-        print('correct')
+    try:
+        answer = int(data)
+    except ValueError:
+        print(f'{data} is not a number, please try again.')
     else:
-        print(f'Sorry, {data} is not a valid anwer. Please try again.')
+        if int(data) == 1 or int(data) == 2:
+            print('correct')
+        else:
+            print(f'Sorry, {data} is not a valid anwer. Please try again.')
+
 
 main_screen()
