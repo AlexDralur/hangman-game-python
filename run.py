@@ -1,7 +1,10 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 def hangman_design():
-
+    """
+    Structure for the design of the hangman.
+    Based on the amount of errors of the user, the design change.
+    """
     if error_counter = 0:
         print('    ______    ')
         print('    |    |    ')
@@ -56,7 +59,7 @@ def hangman_design():
         print('         |    ')
         print('       *****  ')
 
-    elif error_counter = 3:
+    elif error_counter = 6:
         print('    ______    ')
         print('    |    |    ')
         print('    O    |    ')
