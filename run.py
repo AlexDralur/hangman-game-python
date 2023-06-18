@@ -117,6 +117,7 @@ def change_difficulty(data):
     else:
         if data.lower() == 'e':
             print('You chose the difficult: easy.')
+            print(random.choice(words))
         
         elif data.lower() == 'm':
             print('You chose the difficult: medium.')
@@ -125,9 +126,7 @@ def change_difficulty(data):
             print('You chose the difficult: hard.')
 
         else:
-            print(f'Sorry, {data} is not a valid answer. Please try again.')
+            print(f'Sorry, {data} is not a valid answer. Please try again: ')
 
-def random_word():
-    word = 
 
 main_screen()
