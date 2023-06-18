@@ -76,10 +76,16 @@ def main_screen():
    | | | | | |  __/ |  _  | (_| | | | | (_| | | | | | | (_| | | | |
    |_| |_| |_|\___| |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                                        |___/                       """)
-    print ('Welcome to The Hangman')
+    print ('WELCOME TO THE HANGMAN')
     print('Would you like to play? Press Y')
     print('Change difficult? Press D')
     first_option = input('Choose your option: ')
-    print(first_option)
+    check_answer(first_option)
+
+def check_answer(data):
+    if data.lower() == 'y' or data.lower() == 'd':
+        print('correct')
+    else:
+        print(f'Sorry, {data} is not a valid anwer. Please try again.')
 
 main_screen()
