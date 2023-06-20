@@ -139,46 +139,52 @@ def choose_word(data):
         while len(word) >= 4:
             word = random.choice(words)
         else:
-            return word
+            return word.upper()
 
     elif data == 'm':
         while len(word) < 5 or len(word) >= 6:
             word = random.choice(words)
         else:
-            return word
+            return word.upper()
         
     elif data == 'h':
         while len(word) <= 6:
             word = random.choice(words)
         else:
-            return word
+            return word.upper()
 
 
-def game_structure(random_word):
+def game_structure(data):
 
     error_counter = 0
     used_letters = []
 
     hangman_design()
-    
-    for letter in random_word:
-        print('_', end=' ')
-    print('\n')
     guess = input('Guess a letter: ').upper()
+
+    for letter in data:
+        print('_', end=' ')
+        if guess == letter:
+            used_letters.append(guess)
+            hangman_design()
+            print(used_letters, end='\n')
+            print(guess, end=" ")
+            print('Good guess. Try another letter: ')
+            guess = input('Guess a letter: ').upper()
+        else:
+            used_letters.append(guess)
+            print(used_letters, end='\n')
+            error_counter += 1
+            hangman_design()
+            print('_', end=' ')
+            print('\n')
+            print('Sorry, wrong letter. Try another one: ')
+            guess = input('Guess a letter: ').upper()
     
     while error_counter < 6:
-        for letter in random_word:
-            if letter == guess:
-                print(guess, end=' ')
-                print('\n')
-                print('Good guess. Try another letter: ')
-                guess = input('Guess a letter: ').upper()
-            else:
-                error_counter += 1
-                print('_', end=' ')
-                print('\n')
-                print('Sorry, wrong letter. Try another one: ')
-                guess = input('Guess a letter: ').upper()
-                
+        if guess.isalpha() == True:
+            game_structure(data)
+        else:
+            print(f'Sorry, {guess} is not a valid answer. Please try again.')    
 
 main_screen()
