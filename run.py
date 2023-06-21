@@ -157,7 +157,7 @@ def game_structure(data):
     error_counter = 0
     used_letters = []
 
-    hangman_design(data)
+    hangman_design(error_counter)
     guess = input('Guess a letter: ').upper()
 
     for letter in data:
