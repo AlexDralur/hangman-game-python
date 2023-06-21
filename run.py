@@ -120,32 +120,13 @@ def game_structure(data):
         elif len(guess) < 1:
             hangman_design(error_counter)
             guess = input('No letter identified. Please, guess a letter: ').upper()
-
-
-    for letter in data:
-        print('_', end=' ')
-        if guess == letter:
-            used_letters.append(guess)
+        elif len(guess) > 1:
             hangman_design(error_counter)
-            print(used_letters, end='\n')
-            print(guess, end=" ")
-            print('Good guess. Try another letter: ')
-            guess = input('Guess a letter: ').upper()
+            guess = input('Please, guess only one letter at a time. Please, guess a letter: ').upper()
         else:
-            used_letters.append(guess)
-            print(used_letters, end='\n')
-            error_counter += 1
-            hangman_design(error_counter)
-            print('_', end=' ')
-            print('\n')
-            print('Sorry, wrong letter. Try another one: ')
+            print(f'Sorry, {guess} is not a valid answer. Please try again.')
             guess = input('Guess a letter: ').upper()
-    
-    while error_counter < 6:
-        if guess.isalpha() == True:
-            game_structure(data)
-        else:
-            print(f'Sorry, {guess} is not a valid answer. Please try again.')    
+
 
 def hangman_design(data):
     """
