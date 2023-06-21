@@ -87,13 +87,19 @@ def game_structure(data):
     error_counter = 0
     used_letters = []
 
-    hangman_design(error_counter)
+    # hangman_design(error_counter)
 
-    hidden_word = '_' * len(word)
+    hidden_word = '_' * len(data)
 
     while error_counter < 6:
+        hangman_design(error_counter)
         print(hidden_word)
-        print(f'You have made {error_counter} mistakes.')
+        if error_counter == 1:
+            print(f'You have made {error_counter} mistake.')
+        else:
+            print(f'You have made {error_counter} mistakes.')
+
+        print(data)
 
         guess = input('Guess a letter:').upper()
 
@@ -101,11 +107,11 @@ def game_structure(data):
             if guess in used_letters:
                 hangman_design(error_counter)
                 print(f'Sorry, {guess} has already been used. Please try again.')
-            elif guess in word:
+            elif guess in data:
                 used_letters.append(guess)
                 hangman_design(error_counter)
                 print(f'Used letters: {used_letters}', end='\n')
-                print(guess, end=" ")
+                print(hidden_word, end=" ")
                 print('Good guess. Try another letter: ')
                 guess = input('Guess a letter: ').upper()
             else:
@@ -113,17 +119,24 @@ def game_structure(data):
                 print(f'Used letters: {used_letters}', end='\n')
                 error_counter += 1
                 hangman_design(error_counter)
-                print('_', end=' ')
+                print(hidden_word, end=" ")
                 print('\n')
                 print('Sorry, wrong letter. Try another one: ')
                 guess = input('Guess a letter: ').upper()
         elif len(guess) < 1:
             hangman_design(error_counter)
+            print(hidden_word, end=" ")
+            print('\n')
             guess = input('No letter identified. Please, guess a letter: ').upper()
         elif len(guess) > 1:
             hangman_design(error_counter)
+            print(hidden_word, end=" ")
+            print('\n')
             guess = input('Please, guess only one letter at a time. Please, guess a letter: ').upper()
         else:
+            hangman_design(error_counter)
+            print(hidden_word, end=" ")
+            print('\n')
             print(f'Sorry, {guess} is not a valid answer. Please try again.')
             guess = input('Guess a letter: ').upper()
 
