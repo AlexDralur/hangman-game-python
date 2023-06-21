@@ -4,76 +4,6 @@ from words import words
 
 #words source: https://github.com/Xethron/Hangman
 
-
-def hangman_design(data):
-    """
-    Structure for the design of the hangman.
-    Based on the amount of errors of the user, the design change.
-    """
-    if data == 0:
-        print('    ______    ')
-        print('    |    |    ')
-        print('         |    ')
-        print('         |    ')
-        print('         |    ')
-        print('         |    ')
-        print('       *****  ')
-    
-    elif data == 1:
-        print('    ______    ')
-        print('    |    |    ')
-        print('    O    |    ')
-        print('         |    ')
-        print('         |    ')
-        print('         |    ')
-        print('       *****  ')
-    
-    elif data == 2:
-        print('    ______    ')
-        print('    |    |    ')
-        print('    O    |    ')
-        print('    |    |    ')
-        print('         |    ')
-        print('         |    ')
-        print('       *****  ')
-        
-    elif data == 3:
-        print('    ______    ')
-        print('    |    |    ')
-        print('    O    |    ')
-        print('   /|    |    ')
-        print('         |    ')
-        print('         |    ')
-        print('       *****  ')
-
-    elif data == 4:
-        print('    ______    ')
-        print('    |    |    ')
-        print('    O    |    ')
-        print('   /|\   |    ')
-        print('         |    ')
-        print('         |    ')
-        print('       *****  ')
-
-    elif data == 5:
-        print('    ______    ')
-        print('    |    |    ')
-        print('    O    |    ')
-        print('   /|\   |    ')
-        print('   /     |    ')
-        print('         |    ')
-        print('       *****  ')
-
-    elif data == 6:
-        print('    ______    ')
-        print('    |    |    ')
-        print('    O    |    ')
-        print('   /|\   |    ')
-        print('   / \   |    ')
-        print('         |    ')
-        print('       *****  ')
-
-
 def main_screen():
     print("""  _____ _            _   _                                         
  |_   _| |__   ___  | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __  
@@ -158,7 +88,10 @@ def game_structure(data):
     used_letters = []
 
     hangman_design(error_counter)
-    guess = input('Guess a letter: ').upper()
+
+    hidden_word = '_' * len(word)
+
+    while 
 
     for letter in data:
         print('_', end=' ')
@@ -184,5 +117,73 @@ def game_structure(data):
             game_structure(data)
         else:
             print(f'Sorry, {guess} is not a valid answer. Please try again.')    
+
+def hangman_design(data):
+    """
+    Structure for the design of the hangman.
+    Based on the amount of errors of the user, the design change.
+    """
+    if data == 0:
+        print('    ______    ')
+        print('    |    |    ')
+        print('         |    ')
+        print('         |    ')
+        print('         |    ')
+        print('         |    ')
+        print('       *****  ')
+    
+    elif data == 1:
+        print('    ______    ')
+        print('    |    |    ')
+        print('    O    |    ')
+        print('         |    ')
+        print('         |    ')
+        print('         |    ')
+        print('       *****  ')
+    
+    elif data == 2:
+        print('    ______    ')
+        print('    |    |    ')
+        print('    O    |    ')
+        print('    |    |    ')
+        print('         |    ')
+        print('         |    ')
+        print('       *****  ')
+        
+    elif data == 3:
+        print('    ______    ')
+        print('    |    |    ')
+        print('    O    |    ')
+        print('   /|    |    ')
+        print('         |    ')
+        print('         |    ')
+        print('       *****  ')
+
+    elif data == 4:
+        print('    ______    ')
+        print('    |    |    ')
+        print('    O    |    ')
+        print('   /|\   |    ')
+        print('         |    ')
+        print('         |    ')
+        print('       *****  ')
+
+    elif data == 5:
+        print('    ______    ')
+        print('    |    |    ')
+        print('    O    |    ')
+        print('   /|\   |    ')
+        print('   /     |    ')
+        print('         |    ')
+        print('       *****  ')
+
+    elif data == 6:
+        print('    ______    ')
+        print('    |    |    ')
+        print('    O    |    ')
+        print('   /|\   |    ')
+        print('   / \   |    ')
+        print('         |    ')
+        print('       *****  ')
 
 main_screen()
