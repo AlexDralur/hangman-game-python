@@ -117,6 +117,9 @@ def game_structure(data):
                 print('\n')
                 print('Sorry, wrong letter. Try another one: ')
                 guess = input('Guess a letter: ').upper()
+        elif len(guess) < 1:
+            hangman_design(error_counter)
+            guess = input('No letter identified. Please, guess a letter: ').upper()
 
 
     for letter in data:
