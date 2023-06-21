@@ -91,7 +91,33 @@ def game_structure(data):
 
     hidden_word = '_' * len(word)
 
-    while 
+    while error_counter < 6:
+        print(hidden_word)
+        print(f'You have made {error_counter} mistakes.')
+
+        guess = input('Guess a letter:').upper()
+
+        if guess.isalpha() and len(guess) == 1:
+            if guess in used_letters:
+                hangman_design(error_counter)
+                print(f'Sorry, {guess} has already been used. Please try again.')
+            elif guess in word:
+                used_letters.append(guess)
+                hangman_design(error_counter)
+                print(f'Used letters: {used_letters}', end='\n')
+                print(guess, end=" ")
+                print('Good guess. Try another letter: ')
+                guess = input('Guess a letter: ').upper()
+            else:
+                used_letters.append(guess)
+                print(f'Used letters: {used_letters}', end='\n')
+                error_counter += 1
+                hangman_design(error_counter)
+                print('_', end=' ')
+                print('\n')
+                print('Sorry, wrong letter. Try another one: ')
+                guess = input('Guess a letter: ').upper()
+
 
     for letter in data:
         print('_', end=' ')
