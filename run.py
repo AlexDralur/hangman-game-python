@@ -42,14 +42,19 @@ def change_difficulty(data):
     else:
         if data.lower() == 'e':
             print('You chose the difficult: easy.')
+            rules()
             random_word = choose_word('e')
             game_structure(random_word)
         
         elif data.lower() == 'm':
+            print('You chose the difficult: medium.')
+            rules()
             random_word = choose_word('m')
             game_structure(random_word)
 
         elif data.lower() == 'h':
+            print('You chose the difficult: hard.')
+            rules()
             random_word = choose_word('h')
             game_structure(random_word)
 
