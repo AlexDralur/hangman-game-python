@@ -159,23 +159,32 @@ def game_structure(data):
     if error_counter == 6:
         endgame()
 
-def endgame():
+def endgame(data):
+
+    if data == "lose":
     print("""   ____                         ___                 
-  / ___| __ _ _ __ ___   ___   / _ \__   _____ _ __ 
- | |  _ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
- | |_| | (_| | | | | | |  __/ | |_| |\ V /  __/ |   
-  \____|\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
+      / ___| __ _ _ __ ___   ___   / _ \__   _____ _ __ 
+     | |  _ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
+     | |_| | (_| | | | | | |  __/ | |_| |\ V /  __/ |   
+      \____|\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
                                                     """)
     hangman_design(error_counter)
     replay = input('Sorry, you ran out of tries. Press Y to play again.').upper()
+
+    elif data == "won":
+        print("""   ____                            _         _       _   _                 _ 
+          / ___|___  _ __   __ _ _ __ __ _| |_ _   _| | __ _| |_(_) ___  _ __  ___| |
+         | |   / _ \| '_ \ / _` | '__/ _` | __| | | | |/ _` | __| |/ _ \| '_ \/ __| |
+         | |__| (_) | | | | (_| | | | (_| | |_| |_| | | (_| | |_| | (_) | | | \__ \_|
+          \____\___/|_| |_|\__, |_|  \__,_|\__|\__,_|_|\__,_|\__|_|\___/|_| |_|___(_)
+                           |___/                                                     """)
+    replay = input('Congratulations, you guessed the word. Press Y to play again.').upper()
 
     if replay == 'Y':
         main_screen()
     else:
         replay = input('Sorry, that is not a validate input. Press Y to play it again.')
     
-
-
 
 def hangman_design(data):
     """
