@@ -118,6 +118,9 @@ def game_structure(data):
                 for index in indices:
                     word_as_list[index] = guess
                 hidden_word = "".join(word_as_list)
+                for letter in hidden_word:
+                    if letter != '_':
+                        congratulations()
                 print(f'Used letters: {used_letters}', end='\n')
                 hangman_design(error_counter)
                 print(hidden_word, end=" ")
