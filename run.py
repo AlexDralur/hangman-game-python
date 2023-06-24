@@ -164,7 +164,12 @@ def endgame():
   \____|\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
                                                     """)
     hangman_design(error_counter)
-    replay = input('Sorry, you ran out of tries. Press Y to play again.')
+    replay = input('Sorry, you ran out of tries. Press Y to play again.').upper()
+
+    if replay == 'Y':
+        main_screen()
+    else:
+        replay = input('Sorry, that is not a validate input. Press Y to play it again.')
     
 
 
