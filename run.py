@@ -95,7 +95,7 @@ def game_structure(data):
     guess = input('Guess a letter: ').upper()
 
 
-    while error_counter <= 5:
+    while error_counter < 6:
         hangman_design(error_counter)
         print(hidden_word)
         if error_counter == 1:
@@ -118,9 +118,8 @@ def game_structure(data):
                 for index in indices:
                     word_as_list[index] = guess
                 hidden_word = "".join(word_as_list)
-                # for letter in hidden_word:
-                #     if letter != '_':
-                #         endgame('won')
+                if hidden_word == data:
+                    endgame('won', data)
                 print(f'Used letters: {used_letters}', end='\n')
                 hangman_design(error_counter)
                 print(hidden_word, end=" ")
@@ -157,9 +156,9 @@ def game_structure(data):
             guess = input('Guess a letter: ').upper()
         
     if error_counter == 6:
-        endgame('lose')
+        endgame('lose', data)
 
-def endgame(data):
+def endgame(data, word):
 
     if data == "lose":
         print("""
@@ -170,7 +169,7 @@ def endgame(data):
           \____|\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
                                                     """)
         hangman_design(6)
-        replay = input('Sorry, you ran out of tries. Press Y to play again.').upper()
+        replay = input(f'Sorry, you ran out of tries. The word was {word} Press Y to play again.').upper()
         
         if replay == 'Y':
             main_screen()
