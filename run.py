@@ -267,4 +267,11 @@ def hangman_design(data):
         print('         |    ')
         print('       *****  ')
 
+def rules():
+    print('These are the rules of the game:')
+    print('1. You can only chose one letter each time.')
+    print('2. You cannot guess the whole word at once.')
+    print('3. You can make five wrong guesses.')
+    print('4. If you the whole doll is hanging, you lost the game.')
+    print('5. Good luck!')
 main_screen()
