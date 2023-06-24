@@ -12,28 +12,24 @@ def main_screen():
    |_| |_| |_|\___| |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                                        |___/                       """)
     print ('WELCOME TO THE HANGMAN')
-    print('Would you like to play? Press 1')
-    print('Change difficult? Press 2')
-    first_option = input('Choose your option: ')
-    check_answer(first_option)
+    play = input('Would you like to play? Press 1')
+    check_answer(play)
 
 def check_answer(data):
     try:
         answer = int(data)
-
-    except ValueError:
-        print(f'{data} is not a number, please try again.')
-
-    else:
-        if answer == 1:
-            print('soon')
         
-        elif answer == 2:
+        if answer == 1:
             difficulty = input('Please type "E" for easy, "M" for medium or "H" for hard.')
             change_difficulty(difficulty)
 
-        else:
-            print(f'Sorry, {data} is not a valid anwer. Please try again.')
+    except ValueError:
+        second_try = input(f'{data} is not a number, please try again.')
+        check_answer(second_try)
+
+    else:
+        second_try = input(f'Sorry, {data} is not a valid answer. Please try again.')
+        check_answer(second_try)
 
 def change_difficulty(data):
 
@@ -58,7 +54,8 @@ def change_difficulty(data):
             game_structure(random_word)
 
         else:
-            print(f'Sorry, {data} is not a valid answer. Please try again: ')
+            difficulty_second = input(f'Sorry, {data} is not a valid answer. Please try again: ')
+            change_difficulty(difficulty_second)
 
 
 def choose_word(data):
