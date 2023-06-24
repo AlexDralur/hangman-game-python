@@ -118,9 +118,9 @@ def game_structure(data):
                 for index in indices:
                     word_as_list[index] = guess
                 hidden_word = "".join(word_as_list)
-                for letter in hidden_word:
-                    if letter != '_':
-                        congratulations()
+                # for letter in hidden_word:
+                #     if letter != '_':
+                #         endgame('won')
                 print(f'Used letters: {used_letters}', end='\n')
                 hangman_design(error_counter)
                 print(hidden_word, end=" ")
@@ -157,33 +157,43 @@ def game_structure(data):
             guess = input('Guess a letter: ').upper()
         
     if error_counter == 6:
-        endgame()
+        endgame('lose')
 
 def endgame(data):
 
     if data == "lose":
-    print("""   ____                         ___                 
-      / ___| __ _ _ __ ___   ___   / _ \__   _____ _ __ 
-     | |  _ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
-     | |_| | (_| | | | | | |  __/ | |_| |\ V /  __/ |   
-      \____|\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
+        print("""
+           ____                         ___                 
+          / ___| __ _ _ __ ___   ___   / _ \__   _____ _ __ 
+         | |  _ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
+         | |_| | (_| | | | | | |  __/ | |_| |\ V /  __/ |   
+          \____|\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
                                                     """)
-    hangman_design(error_counter)
-    replay = input('Sorry, you ran out of tries. Press Y to play again.').upper()
+        hangman_design(6)
+        replay = input('Sorry, you ran out of tries. Press Y to play again.').upper()
+        
+        if replay == 'Y':
+            main_screen()
+        else:
+            while replay != 'Y':
+                replay = input('Sorry, that is not a validate input. Press Y to play it again.').upper()
+                if replay == "Y":
+                    main_screen()
 
     elif data == "won":
-        print("""   ____                            _         _       _   _                 _ 
+        print("""
+           ____                            _         _       _   _                 _ 
           / ___|___  _ __   __ _ _ __ __ _| |_ _   _| | __ _| |_(_) ___  _ __  ___| |
          | |   / _ \| '_ \ / _` | '__/ _` | __| | | | |/ _` | __| |/ _ \| '_ \/ __| |
          | |__| (_) | | | | (_| | | | (_| | |_| |_| | | (_| | |_| | (_) | | | \__ \_|
           \____\___/|_| |_|\__, |_|  \__,_|\__|\__,_|_|\__,_|\__|_|\___/|_| |_|___(_)
                            |___/                                                     """)
-    replay = input('Congratulations, you guessed the word. Press Y to play again.').upper()
-
-    if replay == 'Y':
-        main_screen()
-    else:
-        replay = input('Sorry, that is not a validate input. Press Y to play it again.')
+        replay = input('Congratulations, you guessed the word. Press Y to play again.').upper()
+    
+        if replay == 'Y':
+            main_screen()
+        else:
+            replay = input('Sorry, that is not a validate input. Press Y to play it again.')
     
 
 def hangman_design(data):
