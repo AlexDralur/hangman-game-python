@@ -193,8 +193,10 @@ def endgame(data):
         if replay == 'Y':
             main_screen()
         else:
-            replay = input('Sorry, that is not a validate input. Press Y to play it again.')
-    
+            while replay != 'Y':
+                replay = input('Sorry, that is not a validate input. Press Y to play it again.').upper()
+                if replay == "Y":
+                    main_screen()
 
 def hangman_design(data):
     """
