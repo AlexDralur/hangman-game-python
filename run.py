@@ -95,7 +95,7 @@ def game_structure(data):
     guess = input('Guess a letter: ').upper()
 
 
-    while error_counter < 6:
+    while error_counter <= 5:
         hangman_design(error_counter)
         print(hidden_word)
         if error_counter == 1:
@@ -153,6 +153,19 @@ def game_structure(data):
             print(f'Sorry, {guess} is not a valid answer. Please try again.')
             guess = input('Guess a letter: ').upper()
         
+    if error_counter == 6:
+        endgame()
+
+def endgame():
+    print("""   ____                         ___                 
+  / ___| __ _ _ __ ___   ___   / _ \__   _____ _ __ 
+ | |  _ / _` | '_ ` _ \ / _ \ | | | \ \ / / _ \ '__|
+ | |_| | (_| | | | | | |  __/ | |_| |\ V /  __/ |   
+  \____|\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
+                                                    """)
+    hangman_design(error_counter)
+    replay = input('Sorry, you ran out of tries. Press Y to play again.')
+    
 
 
 
