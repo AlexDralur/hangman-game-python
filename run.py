@@ -1,11 +1,10 @@
 import random
 from words import words
 
-#words source: https://github.com/Xethron/Hangman
 
 def main_screen():
     """
-    First screen of the game. 
+    First screen of the game.
     Allows user to start the game.
     """
 
@@ -17,7 +16,7 @@ def main_screen():
    |_| |_| |_|\___| |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                                        |___/                       """)
     hangman_design(6)
-    print ('WELCOME TO THE HANGMAN')
+    print('WELCOME TO THE HANGMAN')
     play = input('Would you like to play? Press 1')
     check_answer(play)
 
