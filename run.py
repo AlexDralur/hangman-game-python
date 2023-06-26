@@ -136,7 +136,7 @@ def game_structure(data):
                 print(hidden_word, end=" ")
                 print('\n')
                 guess = input('Good guess. Try another letter: ').upper()
-            else:                
+            else:
                 used_letters.append(guess)
                 error_counter += 1
                 print(f'Used letters: {used_letters}', end='\n')
@@ -153,7 +153,7 @@ def game_structure(data):
             hangman_design(error_counter)
             print(hidden_word, end=" ")
             print('\n')
-            guess = input('No letter identified. Please, guess a letter: ').upper()
+            guess = input('No letter identified. Please, try again: ').upper()
         elif len(guess) > 1:
             print(f'Used letters: {used_letters}', end='\n')
             hangman_design(error_counter)
