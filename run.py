@@ -159,7 +159,7 @@ def game_structure(data):
             hangman_design(error_counter)
             print(hidden_word, end=" ")
             print('\n')
-            guess = input('Please, guess only one letter at a time. Please, guess a letter: ').upper()
+            guess = input('Guess one letter at a time. Try again: ').upper()
         else:
             print(f'Used letters: {used_letters}', end='\n')
             hangman_design(error_counter)
