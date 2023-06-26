@@ -21,13 +21,14 @@ def main_screen():
     play = input('Would you like to play? Press 1')
     check_answer(play)
 
+
 def check_answer(data):
     """Function to check if the user has 
     pressed the correct key to start the game."""
 
     try:
         answer = int(data)
-        
+
         if answer == 1:
             difficulty = input('Please type "E" for easy, "M" for medium or "H" for hard.')
             change_difficulty(difficulty)
@@ -39,6 +40,7 @@ def check_answer(data):
     else:
         second_try = input(f'Sorry, {data} is not a valid answer. Please try again.')
         check_answer(second_try)
+
 
 def change_difficulty(data):
     """Check which level of difficulty the user has 
@@ -56,7 +58,7 @@ def change_difficulty(data):
             rules()
             random_word = choose_word('e')
             game_structure(random_word)
-        
+
         elif data.lower() == 'm':
             print('You chose the difficult: medium.')
             rules()
@@ -90,7 +92,7 @@ def choose_word(data):
             word = random.choice(words)
         else:
             return word.upper()
-        
+   
     elif data == 'h':
         while len(word) <= 6:
             word = random.choice(words)
@@ -166,9 +168,10 @@ def game_structure(data):
             print('\n')
             print(f'Sorry, {guess} is not a valid answer. Please try again.')
             guess = input('Guess a letter: ').upper()
-        
+
     if error_counter == 6:
         endgame('lose', data)
+
 
 def endgame(data, word):
     """once the user gets the word right or runs out of chances, the function is called.
@@ -184,7 +187,7 @@ def endgame(data, word):
                                                     """)
         hangman_design(6)
         replay = input(f'Sorry, you ran out of tries. The word was {word} Press Y to play again.').upper()
-        
+
         if replay == 'Y':
             main_screen()
         else:
@@ -202,7 +205,7 @@ def endgame(data, word):
           \____\___/|_| |_|\__, |_|  \__,_|\__|\__,_|_|\__,_|\__|_|\___/|_| |_|___(_)
                            |___/                                                     """)
         replay = input(f'Congratulations, you guessed "{word}". Press Y to play again.').upper()
-    
+
         if replay == 'Y':
             main_screen()
         else:
@@ -211,11 +214,13 @@ def endgame(data, word):
                 if replay == "Y":
                     main_screen()
 
+
 def hangman_design(data):
     """
     Structure for the design of the hangman.
     Based on the amount of errors of the user, the design change.
     """
+
     if data == 0:
         print('    ______    ')
         print('    |    |    ')
@@ -224,7 +229,7 @@ def hangman_design(data):
         print('         |    ')
         print('         |    ')
         print('       *****  ')
-    
+
     elif data == 1:
         print('    ______    ')
         print('    |    |    ')
@@ -233,7 +238,7 @@ def hangman_design(data):
         print('         |    ')
         print('         |    ')
         print('       *****  ')
-    
+
     elif data == 2:
         print('    ______    ')
         print('    |    |    ')
@@ -242,7 +247,7 @@ def hangman_design(data):
         print('         |    ')
         print('         |    ')
         print('       *****  ')
-        
+
     elif data == 3:
         print('    ______    ')
         print('    |    |    ')
@@ -278,6 +283,7 @@ def hangman_design(data):
         print('   / \   |    ')
         print('         |    ')
         print('       *****  ')
+
 
 def rules():
     """Set of instructions to be print out once the game starts."""
