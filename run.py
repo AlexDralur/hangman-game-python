@@ -173,8 +173,9 @@ def game_structure(data):
 
 
 def endgame(data, word):
-    """once the user gets the word right or runs out of chances, the function is called.
-    It can provide a congratulations or a game over message and asks if the user would like to play again."""
+    """once the user gets the word right or runs out of chances,
+    the function is called. It can provide a congratulations or
+    a game over message and asks if the user would like to play again."""
 
     if data == "lose":
         print("""
