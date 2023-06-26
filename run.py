@@ -92,7 +92,7 @@ def choose_word(data):
             word = random.choice(words)
         else:
             return word.upper()
-   
+
     elif data == 'h':
         while len(word) <= 6:
             word = random.choice(words)
@@ -102,7 +102,7 @@ def choose_word(data):
 
 def game_structure(data):
     """Main function that makes the game run.
-    While the game is not won or finished, it requests an answer 
+    While the game is not won or finished, it requests an answer
     from the user and prints the relevant information."""
 
     error_counter = 0
@@ -112,12 +112,11 @@ def game_structure(data):
     print(hidden_word)
     guess = input('Guess a letter: ').upper()
 
-
     while error_counter < 6:
 
         if guess.isalpha() and len(guess) == 1:
             if guess in used_letters:
-                print(f'Sorry, {guess} has already been used. Please try again.')
+                print(f'Sorry, {guess} has already been used. Try again.')
                 print(f'Used letters: {used_letters}', end='\n')
                 hangman_design(error_counter)
                 print(hidden_word, end=" ")
