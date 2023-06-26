@@ -182,7 +182,7 @@ def endgame(data, word):
          | |__| (_) | | | | (_| | | | (_| | |_| |_| | | (_| | |_| | (_) | | | \__ \_|
           \____\___/|_| |_|\__, |_|  \__,_|\__|\__,_|_|\__,_|\__|_|\___/|_| |_|___(_)
                            |___/                                                     """)
-        replay = input('Congratulations, you guessed the word. Press Y to play again.').upper()
+        replay = input(f'Congratulations, you guessed "{word}". Press Y to play again.').upper()
     
         if replay == 'Y':
             main_screen()
