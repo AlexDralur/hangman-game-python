@@ -29,7 +29,7 @@ def check_answer(data):
         answer = int(data)
 
         if answer == 1:
-            print('Choose one of the following letter for the difficulty:')
+            print('Choose one of the following letters for the difficulty:')
             difficulty = input('"E" for easy, "M" for medium or "H" for hard.')
             change_difficulty(difficulty)
 
