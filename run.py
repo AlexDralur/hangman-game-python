@@ -1,11 +1,16 @@
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 from words import words
 
 #words source: https://github.com/Xethron/Hangman
 
 def main_screen():
-    print("""  _____ _            _   _                                         
+    """
+    First screen of the game. 
+    Allows user to start the game.
+    """
+
+    print("""
+  _____ _            _   _                                         
  |_   _| |__   ___  | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __  
    | | | '_ \ / _ \ | |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
    | | | | | |  __/ |  _  | (_| | | | | (_| | | | | | | (_| | | | |
@@ -17,6 +22,9 @@ def main_screen():
     check_answer(play)
 
 def check_answer(data):
+    """Function to check if the user has 
+    pressed the correct key to start the game."""
+
     try:
         answer = int(data)
         
@@ -33,7 +41,8 @@ def check_answer(data):
         check_answer(second_try)
 
 def change_difficulty(data):
-
+    """Check which level of difficulty the user has 
+    chosen and if it is one of the correct keys"""
     try:
         option = data.isalpha()
 
