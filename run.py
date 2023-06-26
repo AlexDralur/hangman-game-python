@@ -43,7 +43,7 @@ def check_answer(data):
 
 
 def change_difficulty(data):
-    """Check which level of difficulty the user has 
+    """Check which level of difficulty the user has
     chosen and if it is one of the correct keys"""
 
     try:
@@ -72,12 +72,12 @@ def change_difficulty(data):
             game_structure(random_word)
 
         else:
-            difficulty_second = input(f'Sorry, {data} is not a valid answer. Please try again: ')
-            change_difficulty(difficulty_second)
+            repeat = input(f'Sorry, {data} is not a valid answer. Try again: ')
+            change_difficulty(repeat)
 
 
 def choose_word(data):
-    """Once the user chooses the difficult, the function runs and 
+    """Once the user chooses the difficult, the function runs and
     retrieves one random word based on the user’s choice"""
 
     word = random.choice(words)
