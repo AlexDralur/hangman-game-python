@@ -43,7 +43,7 @@ def check_answer(data):
 def change_difficulty(data):
     """Check which level of difficulty the user has 
     chosen and if it is one of the correct keys"""
-    
+
     try:
         option = data.isalpha()
 
@@ -99,6 +99,9 @@ def choose_word(data):
 
 
 def game_structure(data):
+    """Main function that makes the game run.
+    While the game is not won or finished, it requests an answer 
+    from the user and prints the relevant information."""
 
     error_counter = 0
     used_letters = []
