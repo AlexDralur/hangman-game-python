@@ -43,6 +43,7 @@ def check_answer(data):
 def change_difficulty(data):
     """Check which level of difficulty the user has 
     chosen and if it is one of the correct keys"""
+    
     try:
         option = data.isalpha()
 
@@ -74,6 +75,9 @@ def change_difficulty(data):
 
 
 def choose_word(data):
+    """Once the user chooses the difficult, the function runs and 
+    retrieves one random word based on the user’s choice"""
+
     word = random.choice(words)
     if data == 'e':
         while len(word) >= 4:
