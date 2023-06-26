@@ -11,6 +11,7 @@ def main_screen():
    | | | | | |  __/ |  _  | (_| | | | | (_| | | | | | | (_| | | | |
    |_| |_| |_|\___| |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                                        |___/                       """)
+    hangman_design(6)
     print ('WELCOME TO THE HANGMAN')
     play = input('Would you like to play? Press 1')
     check_answer(play)
