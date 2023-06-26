@@ -22,14 +22,15 @@ def main_screen():
 
 
 def check_answer(data):
-    """Function to check if the user has 
+    """Function to check if the user has
     pressed the correct key to start the game."""
 
     try:
         answer = int(data)
 
         if answer == 1:
-            difficulty = input('Please type "E" for easy, "M" for medium or "H" for hard.')
+            print('Choose one of the following letter for the difficulty:')
+            difficulty = input('"E" for easy, "M" for medium or "H" for hard.')
             change_difficulty(difficulty)
 
     except ValueError:
