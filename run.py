@@ -38,7 +38,7 @@ def check_answer(data):
         check_answer(second_try)
 
     else:
-        second_try = input(f'Sorry, {data} is not a valid answer. Please try again.')
+        second_try = input(f'Sorry, {data} is not a valid answer. Try again.')
         check_answer(second_try)
 
 
