@@ -125,8 +125,8 @@ def game_structure(data):
             elif guess in data:
                 used_letters.append(guess)
                 word_as_list = list(hidden_word)
-                indices = [i for i, letter in enumerate(data) if letter == guess]
-                for index in indices:
+                ind = [i for i, letter in enumerate(data) if letter == guess]
+                for index in ind:
                     word_as_list[index] = guess
                 hidden_word = "".join(word_as_list)
                 if hidden_word == data:
