@@ -88,9 +88,6 @@ def game_structure(data):
 
     error_counter = 0
     used_letters = []
-
-    # hangman_design(error_counter)
-
     hidden_word = '_' * len(data)
     hangman_design(error_counter)
     print(hidden_word)
@@ -98,12 +95,6 @@ def game_structure(data):
 
 
     while error_counter < 6:
-        hangman_design(error_counter)
-        print(hidden_word)
-        if error_counter == 1:
-            print(f'You have made {error_counter} mistake.')
-        else:
-            print(f'You have made {error_counter} mistakes.')
 
         if guess.isalpha() and len(guess) == 1:
             if guess in used_letters:
@@ -126,8 +117,7 @@ def game_structure(data):
                 hangman_design(error_counter)
                 print(hidden_word, end=" ")
                 print('\n')
-                print('Good guess. Try another letter: ')
-                guess = input('Guess a letter: ').upper()
+                guess = input('Good guess. Try another letter: ').upper()
             else:                
                 used_letters.append(guess)
                 error_counter += 1
@@ -135,8 +125,11 @@ def game_structure(data):
                 hangman_design(error_counter)
                 print(hidden_word, end=" ")
                 print('\n')
-                print('Sorry, wrong letter. Try another one: ')
-                guess = input('Guess a letter: ').upper()
+                if error_counter == 1:
+                    print(f'You have made {error_counter} mistake.')
+                else:
+                    print(f'You have made {error_counter} mistakes.')
+                guess = input('Try again. Guess a letter: ').upper()
         elif len(guess) < 1:
             print(f'Used letters: {used_letters}', end='\n')
             hangman_design(error_counter)
