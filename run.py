@@ -171,6 +171,8 @@ def game_structure(data):
         endgame('lose', data)
 
 def endgame(data, word):
+    """once the user gets the word right or runs out of chances, the function is called.
+    It can provide a congratulations or a game over message and asks if the user would like to play again."""
 
     if data == "lose":
         print("""
@@ -278,10 +280,14 @@ def hangman_design(data):
         print('       *****  ')
 
 def rules():
+    """Set of instructions to be print out once the game starts."""
+
     print('These are the rules of the game:')
     print('1. You can only chose one letter each time.')
     print('2. You cannot guess the whole word at once.')
     print('3. You can make five wrong guesses.')
     print('4. If you the whole doll is hanging, you lost the game.')
     print('5. Good luck!')
+
+
 main_screen()
