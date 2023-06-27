@@ -22,9 +22,7 @@ The Hangman is an application made on Python. It is a game that challenges the u
 1. [**Tech**](#tech)
 1. [**Credits**](#credits)
     * [**Honorable mentions**](#honorable-mentions)
-    * [**General reference**](#general-reference)
     * [**Content**](#content)
-    * [**Media**](#media)
 ​
 ## **Planning stage**
 ### **Target Audiences:**
@@ -87,34 +85,12 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ​
 ## **Testing Phase**
 ​
-* Responsiveness - To ensure that the responsiveness of the website was the best possible, to project was built having the mobile access as the base of the design. The initial tests were made on the mobile, extensively and in different models, to confirm that the website was delivering what it was proposed.
+Implementation: 
 
-    On mobile, the website was tested on the following devices:
-    * Samsung 20FE
-    * Iphone 13 Pro Max
+Test: 
 
-    No issues were noted upon project completion.
-
-    On tablets, the website was tested on the following device:
-    * Ipad Air 4
-
-    No issues were noted upon project completion.
-
-    On notebooks, the website was tested on the following devices:
-    * Dell Latitute 15
-    * Macbook Air
-
-    No issues were noted upon project completion.
-
-    For the desktop tests, an Asus VX228 monitor was also used.
-    No issues were noted upon project completion.
-​
-* Functionality - 
-    * On entrance of the game, both buttons, when clicked bring the user to the relevant section. Topscores buttons does not shows the congratulations message or the option to add the score.
-    * While on game, the user can choose one of the options, the click provides the user with the information if they were correct on their choice (the background color of the option changes to red or green, if wrong or correct, respectively) and also calls the function for another question to be presented.
-    * When user answers 10 questions, the final section is presented, with the user score and with the possibility for them to add to the top 5 scores.
-    * The user is requested to add their name and email to be able to add the score. The top scores are them updated with the new information, if the score is within the top five.
-    * On the last section, a play game is also displayed, if the user desires to play the game again. The games gets rebooted.
+Result: 
+*** 
 ​
 * Validators
 
@@ -124,42 +100,13 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ​
 ## **Bugs**
 
-Problem 🐞: Congratulations area was appearing when user clicked on "Check Highscores" button.
+Problem 🐞: 
 
-Cause🛠: The parent div was losing its class which was the one hiding it.
+Cause🛠: 
 
-Resolution✅: Add another class only to the child div to allow to disappear while the parent appeared.
+Resolution✅: 
 *** 
-Problem 🐞: Topplayers did not appear when page was accessed.
 
-Cause🛠: The wrong type of for loop was being used.
-
-Resolution✅: Changed to the "of" type of for loop.​
-***
-Problem 🐞: Sore was not changing while playing the game.
-
-Cause🛠: The score was not added to the runGame function.
-
-Resolution✅: Added to the correct function.
-***
-Problem 🐞: Choices were not being removed from the pool available after being used.
-
-Cause🛠: The wrong type of method was being applied.
-
-Resolution✅: Changed to the correct method.
-***
-Problem 🐞: Answers were not aligned if they were too long.
-
-Cause🛠: The CSS for the choices was not 100% configurated.
-
-Resolution✅: Added further styles.
-***
-Problem 🐞: Game did not reboot if the user tried to play again.
-
-Cause🛠: The function startGame did not update the game items.
-
-Resolution✅: Updated the startGame function.
-***
 
 ## **Deployment**
 I deployed the page on Heroku via the following procedure: -
