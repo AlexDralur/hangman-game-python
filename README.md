@@ -118,17 +118,9 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ​
 * Validators
 
-. HTML [W3C HTML Validator](https://validator.w3.org/)
-![W3C HTML Validator screenshot](assets/images-docs/sytyk_html_validator.png)
-
-. CSS - [Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
-​![Jigsaw CSS Validator screenshot](assets/images-docs/sytyk_css_validator.png)
-
-. Javascript - [JSHint Validator](https://jshint.com/)
-​![JSHint Validator screenshot](assets/images-docs/sytyk_jshint.png)
-
-. Google Lighthouse
-​![Google Lighthouse screenshot](assets/images-docs/sytyk_lighthouse.png)
+. Python Linter [Python Linter Validator](https://pep8ci.herokuapp.com/)
+![Python Linter Validator screenshot - run.py]()
+![Python Linter Validator screenshot - words.py]()
 ​
 ## **Bugs**
 
@@ -170,20 +162,28 @@ Resolution✅: Updated the startGame function.
 ***
 
 ## **Deployment**
-I deployed the page on GitHub pages via the following procedure: -
+I deployed the page on Heroku via the following procedure: -
 ​
-1. From the project's [repository](https://github.com/AlexDralur/quiz-project-2), go to the **Settings** tab.
-2. From the left-hand menu, select the **Pages** tab.
-3. Under the **Source** section, select the **Main** branch from the drop-down menu and click **Save**.
-4. A message will be displayed to indicate a successful deployment to GitHub pages and provide the live link.
-​
-You  can find the live site via the following URL - [live webpage](https://alexdralur.github.io/quiz-project-2/)
+1. Push the code Github [repository](https://github.com/AlexDralur/hangman-game-python).
+2. Log in or Sign up to Heroku where you need to create a new app.
+3. Select a unique name.
+4. In the settings tab reveal the config vars, for this project one had to be added per Code Institutes guidance.
+5. For KEY, input PORT and for VALUE, imput 8000 and click add.
+6. Below that, click add buildpack, select Python and save.
+7. Click add buildpack again, now select Nodejs and save.
+8. Python should be above Nodejs on the buildpack list.
+9. Go to deploy tab and for deployment method select GitHub and connect your GitHub account.
+10. When prompted enter the repository you want to deploy, search and once found connect it.
+11. Now you can either set it automatically or manually deploy the appropriate branch.
+12. Automatically will deploy the app everytime you push something to GitHub.
+13. Manually you have control over when the app should be deployed, but you have to remember to do it.
+14. It might take a little while, but once the app is built Heroku will have a link to the live web page.
+
+You can find the game live via the following URL - [live game]()
 ***
 ​
 ## **Tech**
-- HTML
-- CSS
-- Javascript
+- Python
 ​
 ## **Credits**
 ### **Honorable mentions**
@@ -191,12 +191,6 @@ You  can find the live site via the following URL - [live webpage](https://alexd
 * Richard Wells (my Code Institute tutor) - Help me throughout the project in all aspects.
 ​
 ### **Content:**
-​
-. Fonts from Google Fonts.
 
-. Game structure and buttons structure based on Build a Quiz App [tutorial](https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF) from James Q Quick.
-  
-### **Media:**
-​
-Background image: <a href="https://www.freepik.com/free-vector/mystery-confusion-question-mark-background-liquid-style_38091790.htm#page=3&query=quiz%20pattern&position=15&from_view=search&track=ais">Image by starline</a> on Freepik
- 
+. Words taken from the words.txt [Github](https://github.com/Xethron/Hangman) from Xethron.
+. Code to run through the hidden word and only the letter which was guessed, if correct, from the Python tutorial [Youtube](https://www.youtube.com/watch?v=m4nEnsavl6w) from Kite.
