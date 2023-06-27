@@ -83,7 +83,7 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ​
 ## **Future-Enhancements**
 ​
-* The website uses a small base of questions to randomly present to the user. After futher study of Javascript, the funcionality of fetch can be added to the code to collect from a source a bigger availability of questions.
+* Color can be added to the game to provide a better user experience. 
 ​
 ## **Testing Phase**
 ​
