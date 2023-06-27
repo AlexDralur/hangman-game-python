@@ -11,9 +11,11 @@ The Hangman is an application made on Python. It is a game that challenges the u
     * [***User Stories***](#user-stories)
     * [***Site Aims***](#site-aims)
 1. [**Current Features**](#current-features)
-    * [***Game Entrance***](#game-entrance)
+    * [***Main Screen***](#main-screen)
+    * [***Difficulty selection***](#difficulty-selection)
+    * [***Rules***](#rules)
     * [***Game***](#game)   
-    * [***Congratulations and Topscores***](#congratulations-and-topscores)
+    * [***Congratulations and Game Over***](#congratulations-and-game-over)
 1. [**Future-Enhancements**](#future-enhancements)
 1. [**Testing Phase**](#testing-phase)
 1. [**Deployment**](#deployment)
@@ -46,27 +48,37 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ​
 ## **Current Features**
 ​
-#### *Entrance:*
+#### *Main Screen:*
 
-* This part of the page is divided in two parts: the name/logo of the page and the buttons, to access either the game itself or the topscores table.
-* There is only one change when accessed on bigsreens, where the buttons change the column direction to a row one.
+* Main screen of the game. User can choose to start the game.
 
-![Entrance screenshot](assets/images-docs/sytyk_entrance_screenshot.png)
+![Main screen screenshor]()
+
+#### *Difficulty selection:*
+
+* Once the user enters the game, they are requested to choose the difficulty. The difficulty is based on the length of the word. Depending on what difficulty level the user chooses, the code runs and returns a word from a list.
+
+![Difficulty selection screenshot]()
+
+#### *Rules:*
+
+* After the user chooses the difficulty, the rules are presented. Aiming for the user experience, the user is informed of what expected from the game and how to proceed correctly so that they can have the best experience with the game.
+
+![Rules screenshot]()
 
 #### *Game:*
 
-* The game is divided in three different parts: the hud, where it shows how many questions have been answered until that point and the amount of points; the question; and the four different available answers.
-* When a user chooses one of the answers, the background changes to inform the user if they got it right or wrong, with a green or red color, respectively.
+* The game starts with three main parts: the hangman design (empty, because there is no mistakes yet), the random word hidden and the request for the user to guess a letter. Once the user guesses the first letter, two more items are added to the game: the used letters lists (so the user can see which letters they already guessed) and the amount of mistakes they made.
 
-![Game screenshot](assets/images-docs/sytyk_game_screenshot.png)
+![Game screenshot 1]()
+![Game screenshot 2]()
 
-#### *Congratulations and Topscores:*
+#### *Congratulations and Game Over:*
 
-* This page can be accessed on the entrance of the game or after the user answers ten questions. If it is accessed without playing the game, the page only shows to the user the topscores and the "Play Game" button. If they finish the game, they are greeted with a congratulations message, their score and the possibility of registering the score.
-* The registration requires a name and email. The same user is allowed to play more than once and register their score.
+* There is two outcomes of the game: the user can either win or lose. If they win, they are greeted with a congratulations message and an invitation to play again. If the user loses, they receive a Game Over message, the information of what was the word and also the invitation to replay the game.
 
-![Topscores with no congratulations screenshot](assets/images-docs/sytyk_topscores_no_congratulations_screenshot.png)
-![Congratulations and Topscores screenshot](assets/images-docs/sytyk_topscores_with_congratulations_screenshot.png)
+![Congratulations screenshot]()
+![Game Over screenshot]()
 
 ​
 ## **Future-Enhancements**
