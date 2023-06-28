@@ -1,5 +1,3 @@
-#words source: https://github.com/Xethron/Hangman
-
 words = [
     "able",
     "about",

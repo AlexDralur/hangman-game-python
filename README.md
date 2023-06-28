@@ -50,33 +50,34 @@ The Hangman is an application made on Python. It is a game that challenges the u
 
 * Main screen of the game. User can choose to start the game.
 
-![Main screen screenshor]()
+![Main screen screenshor](assets/images-docs/main_screen.png)
 
 #### *Difficulty selection:*
 
 * Once the user enters the game, they are requested to choose the difficulty. The difficulty is based on the length of the word. Depending on what difficulty level the user chooses, the code runs and returns a word from a list.
 
-![Difficulty selection screenshot]()
+![Difficulty selection screenshot](assets/images-docs/difficulty_screenshot.png)
 
 #### *Rules:*
 
 * After the user chooses the difficulty, the rules are presented. Aiming for the user experience, the user is informed of what expected from the game and how to proceed correctly so that they can have the best experience with the game.
 
-![Rules screenshot]()
+![Rules screenshot](assets/images-docs/rules_screenshot.png)
 
 #### *Game:*
 
 * The game starts with three main parts: the hangman design (empty, because there is no mistakes yet), the random word hidden and the request for the user to guess a letter. Once the user guesses the first letter, two more items are added to the game: the used letters lists (so the user can see which letters they already guessed) and the amount of mistakes they made.
 
-![Game screenshot 1]()
-![Game screenshot 2]()
+![Game screenshot 1](assets/images-docs/game_screenshot_1.png)
+![Game screenshot 2](assets/images-docs/game_screenshot_2.png)
+![Game screenshot 3](assets/images-docs/game_screenshot_3.png)
 
 #### *Congratulations and Game Over:*
 
 * There is two outcomes of the game: the user can either win or lose. If they win, they are greeted with a congratulations message and an invitation to play again. If the user loses, they receive a Game Over message, the information of what was the word and also the invitation to replay the game.
 
-![Congratulations screenshot]()
-![Game Over screenshot]()
+![Congratulations screenshot](assets/images-docs/congrats_screenshot.png)
+![Game Over screenshot](assets/images-docs/game_over_screenshot.png)
 
 ​
 ## **Future-Enhancements**
@@ -96,7 +97,7 @@ Result:
 
 . Python Linter [Python Linter Validator](https://pep8ci.herokuapp.com/)
 ![Python Linter Validator screenshot - run.py]()
-![Python Linter Validator screenshot - words.py]()
+![Python Linter Validator screenshot - words.py](assets/images-docs/rules_screenshot.png)
 ​
 ## **Bugs**
 
@@ -111,11 +112,11 @@ Resolution✅:
 ## **Deployment**
 I deployed the page on Heroku via the following procedure: -
 ​
-1. Push the code Github [repository](https://github.com/AlexDralur/hangman-game-python).
+1. Push the code to the Github [repository](https://github.com/AlexDralur/hangman-game-python).
 2. Log in or Sign up to Heroku where you need to create a new app.
 3. Select a unique name.
 4. In the settings tab reveal the config vars, for this project one had to be added per Code Institutes guidance.
-5. For KEY, input PORT and for VALUE, imput 8000 and click add.
+5. For KEY, input PORT and for VALUE, input 8000 and click add.
 6. Below that, click add buildpack, select Python and save.
 7. Click add buildpack again, now select Nodejs and save.
 8. Python should be above Nodejs on the buildpack list.
