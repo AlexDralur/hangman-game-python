@@ -46,32 +46,32 @@ def change_difficulty(data):
     """Check which level of difficulty the user has
     chosen and if it is one of the correct keys"""
 
-    try:
-        if data.isalpha():
-            if data.lower() == 'e':
-                print('You chose the difficult: easy.')
-                rules()
-                random_word = choose_word('e')
-                game_structure(random_word)
+    while data.isalpha() == False:
+        repeat = input(f'{data} is not a valid option, please try again.')
+        change_difficulty(repeat)
+    
+    else:
+        if data.lower() == 'e':
+            print('You chose the difficult: easy.')
+            rules()
+            random_word = choose_word('e')
+            game_structure(random_word)
 
-            elif data.lower() == 'm':
-                print('You chose the difficult: medium.')
-                rules()
-                random_word = choose_word('m')
-                game_structure(random_word)
+        elif data.lower() == 'm':
+            print('You chose the difficult: medium.')
+            rules()
+            random_word = choose_word('m')
+            game_structure(random_word)
 
-            elif data.lower() == 'h':
-                print('You chose the difficult: hard.')
-                rules()
-                random_word = choose_word('h')
-                game_structure(random_word)
+        elif data.lower() == 'h':
+            print('You chose the difficult: hard.')
+            rules()
+            random_word = choose_word('h')
+            game_structure(random_word)
 
-            else:
-                repeat = input(f'Sorry, {data} is not a valid answer. Try again: ')
-                change_difficulty(repeat)
-
-    except TypeError:
-        print(f'{data} is not a valid option, please try again.')
+        else:
+            repeat = input(f'Sorry, {data} is not a valid answer. Try again: ')
+            change_difficulty(repeat)
 
 
 def choose_word(data):
