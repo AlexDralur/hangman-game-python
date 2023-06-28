@@ -126,7 +126,7 @@ I deployed the page on Heroku via the following procedure: -
 13. Manually you have control over when the app should be deployed, but you have to remember to do it.
 14. It might take a little while, but once the app is built Heroku will have a link to the live web page.
 
-You can find the game live via the following URL - [live game]()
+You can find the game live via the following URL - [live game](https://hangman-alexander-78ba1ad29a14.herokuapp.com/)
 ***
 ​
 ## **Tech**
