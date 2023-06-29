@@ -17,7 +17,7 @@ def main_screen():
                                        |___/                       """)
     hangman_design(6)
     print('WELCOME TO THE HANGMAN')
-    play = input('Would you like to play? Press 1')
+    play = input('Would you like to play? Press 1: ')
     check_answer(play)
 
 
@@ -30,15 +30,15 @@ def check_answer(data):
 
         if answer == 1:
             print('Choose one of the following letters for the difficulty:')
-            difficulty = input('"E" for easy, "M" for medium or "H" for hard.')
+            difficulty = input('"E" for easy, "M" for medium or "H" for hard: ')
             change_difficulty(difficulty)
 
     except ValueError:
-        second_try = input(f'{data} is not a number, please try again.')
+        second_try = input(f'{data} is not a number, please try again: ')
         check_answer(second_try)
 
     else:
-        second_try = input(f'Sorry, {data} is not a valid answer. Try again.')
+        second_try = input(f'Sorry, {data} is not a valid answer. Try again: ')
         check_answer(second_try)
 
 
@@ -47,7 +47,7 @@ def change_difficulty(data):
     chosen and if it is one of the correct keys"""
 
     while data.isalpha() == False:
-        repeat = input(f'{data} is not a valid option, please try again.')
+        repeat = input(f'{data} is not a valid option, please try again: ')
         change_difficulty(repeat)
     
     else:
@@ -184,13 +184,13 @@ def endgame(data, word):
           \____|\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|   
                                                     """)
         hangman_design(6)
-        replay = input(f'Sorry, you ran out of tries. The word was {word} Press Y to play again.').upper()
+        replay = input(f'Sorry, you ran out of tries. The word was {word} Press Y to play again: ').upper()
 
         if replay == 'Y':
             main_screen()
         else:
             while replay != 'Y':
-                replay = input('Sorry, that is not a validate input. Press Y to play it again.').upper()
+                replay = input('Sorry, that is not a validate input. Press Y to play it again: ').upper()
                 if replay == "Y":
                     main_screen()
 
@@ -202,13 +202,13 @@ def endgame(data, word):
  | |__| |_| | |\  | |_| |  _ <  / ___ \| |  ___) |_|
   \____\___/|_| \_|\____|_| \_\/_/   \_\_| |____/(_)
                                                     """)
-        replay = input(f'Congratulations, you guessed "{word}". Press Y to play again.').upper()
+        replay = input(f'Congratulations, you guessed "{word}". Press Y to play again: ').upper()
 
         if replay == 'Y':
             main_screen()
         else:
             while replay != 'Y':
-                replay = input('Sorry, that is not a validate input. Press Y to play it again.').upper()
+                replay = input('Sorry, that is not a validate input. Press Y to play it again: ').upper()
                 if replay == "Y":
                     main_screen()
 
