@@ -152,7 +152,7 @@ def game_structure(data):
             print(hidden_word, end=" ")
             print('\n')
             guess = input('No letter identified. Please, try again: ').upper()
-        elif len(guess) > 1:
+        elif len(guess) > 1 and guess.isalpha() == True:
             print(f'Used letters: {used_letters}', end='\n')
             hangman_design(error_counter)
             print(hidden_word, end=" ")
