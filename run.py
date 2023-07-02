@@ -18,10 +18,10 @@ def main_screen():
     hangman_design(6)
     print('WELCOME TO THE HANGMAN')
     play = input('Would you like to play? Press 1: ')
-    check_answer(play)
+    check_difficulty_choice(play)
 
 
-def check_answer(data):
+def check_difficulty_choice(data):
     """Function to check if the user has
     pressed the correct key to start the game."""
 
@@ -140,16 +140,17 @@ def game_structure(data):
                     print(f'You have made {error_counter} mistake.')
                 else:
                     print(f'You have made {error_counter} mistakes.')
-                hangman_design(error_counter)
+                if error_counter < 6:
+                    hangman_design(error_counter)
                 print('\n')
         elif len(guess) < 1:
             print(f'Used letters: {used_letters}', end='\n')
-            print('No letter identified. Please, try again.').upper()
+            print('No letter identified. Please, try again.')
             hangman_design(error_counter)
             print('\n')
         elif len(guess) > 1 and guess.isalpha() == True:
             print(f'Used letters: {used_letters}', end='\n')
-            print('Guess one letter at a time. Try again.').upper()
+            print('Guess one letter at a time. Try again.')
             hangman_design(error_counter)
             print('\n')
         elif guess == "EXIT" or guess == '"EXIT"':
