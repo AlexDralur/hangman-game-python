@@ -1,4 +1,5 @@
 import random
+import os
 from words import words
 
 
@@ -11,7 +12,7 @@ def main_screen():
     print("""
   _____ _            _   _
  |_   _| |__   ___  | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __
-   | | | '_ \ / _ \ | |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \'
+   | | | '_ \ / _ \ | |_| |/ _` | '_ \ / _` | '_ ` _ \ / _` | '_ \`
    | | | | | |  __/ |  _  | (_| | | | | (_| | | | | | | (_| | | | |
    |_| |_| |_|\___| |_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
                                        |___/                       """)
@@ -30,7 +31,8 @@ def check_difficulty_choice(data):
 
         if answer == 1:
             print('Choose one of the following letters for the difficulty:')
-            difficulty = input('"E" for easy, "M" for medium or "H" for hard: ')
+            difficulty = input(
+                '"E" for easy, "M" for medium or "H" for hard: ')
             change_difficulty(difficulty)
 
     except ValueError:
@@ -148,7 +150,7 @@ def game_structure(data):
             print('No letter identified. Please, try again.')
             hangman_design(error_counter)
             print('\n')
-        elif len(guess) > 1 and guess.isalpha() == True:
+        elif len(guess) > 1 and guess.isalpha() is True:
             print(f'Used letters: {used_letters}', end='\n')
             print('Guess one letter at a time. Try again.')
             hangman_design(error_counter)
@@ -179,15 +181,20 @@ def endgame(data, word):
           \____|\__,_|_| |_| |_|\___|  \___/  \_/ \___|_|
                                                     """)
         hangman_design(6)
-        replay = input(f'Sorry, you ran out of tries. The word was {word} Press Y to play again: ').upper()
+        print(f'Sorry, you ran out of tries. The word was {word}.')
+        replay = input(
+            'Type "Y" to play again or "Exit" to leave: ').upper()
 
-        if replay == 'Y':
-            main_screen()
-        else:
-            while replay != 'Y':
-                replay = input('Sorry, that is not a validate input. Press Y to play it again: ').upper()
-                if replay == "Y":
-                    main_screen()
+        while replay != 'Y' or replay != 'EXIT':
+            print('Sorry, that is not a validate input.')
+            replay = input(
+                'Type "Y" to play again or "exit" to leave: ').upper()
+
+            if replay == 'Y':
+                os.system('clear')
+                main_screen()
+            elif replay == 'EXIT':
+                exit()
 
     elif data == "won":
         print("""
@@ -197,15 +204,20 @@ def endgame(data, word):
  | |__| |_| | |\  | |_| |  _ <  / ___ \| |  ___) |_|
   \____\___/|_| \_|\____|_| \_\/_/   \_\_| |____/(_)
                                                     """)
-        replay = input(f'Congratulations, you guessed "{word}". Press Y to play again: ').upper()
+        print(f'Congratulations, you guessed "{word}".')
+        replay = input(
+            'Type "Y" to play again or "exit" to leave: ').upper()
 
-        if replay == 'Y':
-            main_screen()
-        else:
-            while replay != 'Y':
-                replay = input('Sorry, that is not a validate input. Press Y to play it again: ').upper()
-                if replay == "Y":
-                    main_screen()
+        while replay != 'Y' or replay != 'EXIT':
+            print('Sorry, that is not a validate input.')
+            replay = input(
+                'Type "Y" to play it again or "exit" to leave: ').upper()
+
+            if replay == 'Y':
+                os.system('clear')
+                main_screen()
+            elif replay == 'EXIT':
+                exit()
 
 
 def hangman_design(data):
