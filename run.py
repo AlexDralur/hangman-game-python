@@ -46,31 +46,30 @@ def change_difficulty(data):
     """Check which level of difficulty the user has
     chosen and if it is one of the correct keys"""
 
-    while data.isalpha() == False:
-        repeat = input(f'{data} is not a valid option, please try again: ')
-        change_difficulty(repeat)
-    
+    if data.lower() == 'e':
+        print('You chose the difficult: easy.')
+        rules()
+        random_word = choose_word('e')
+        game_structure(random_word)
+
+    elif data.lower() == 'm':
+        print('You chose the difficult: medium.')
+        rules()
+        random_word = choose_word('m')
+        game_structure(random_word)
+
+    elif data.lower() == 'h':
+        print('You chose the difficult: hard.')
+        rules()
+        random_word = choose_word('h')
+        game_structure(random_word)
+
     else:
-        if data.lower() == 'e':
-            print('You chose the difficult: easy.')
-            rules()
-            random_word = choose_word('e')
-            game_structure(random_word)
-
-        elif data.lower() == 'm':
-            print('You chose the difficult: medium.')
-            rules()
-            random_word = choose_word('m')
-            game_structure(random_word)
-
-        elif data.lower() == 'h':
-            print('You chose the difficult: hard.')
-            rules()
-            random_word = choose_word('h')
-            game_structure(random_word)
-
+        if data.isalpha() is False:
+            repeat = input(f'Sorry, {data} is not a letter. Try again: ')
+            change_difficulty(repeat)
         else:
-            repeat = input(f'Sorry, {data} is not a valid answer. Try again: ')
+            repeat = input(f'Sorry, {data} is not a valid letter. Try again: ')
             change_difficulty(repeat)
 
 
@@ -116,8 +115,8 @@ def game_structure(data):
 
         if guess.isalpha() and len(guess) == 1:
             if guess in used_letters:
-                print(f'Sorry, {guess} has already been used. Try again.')
                 print(f'Used letters: {used_letters}', end='\n')
+                print(f'Sorry, {guess} has already been used. Try again.')
                 hangman_design(error_counter)
                 print('\n')
             elif guess in data:
@@ -130,33 +129,34 @@ def game_structure(data):
                 if hidden_word == data:
                     endgame('won', data)
                 print(f'Used letters: {used_letters}', end='\n')
+                print('Good guess. Try again.')
                 hangman_design(error_counter)
                 print('\n')
             else:
                 used_letters.append(guess)
                 error_counter += 1
                 print(f'Used letters: {used_letters}', end='\n')
-                hangman_design(error_counter)
-                print('\n')
                 if error_counter == 1:
                     print(f'You have made {error_counter} mistake.')
                 else:
                     print(f'You have made {error_counter} mistakes.')
+                hangman_design(error_counter)
+                print('\n')
         elif len(guess) < 1:
             print(f'Used letters: {used_letters}', end='\n')
+            print('No letter identified. Please, try again.').upper()
             hangman_design(error_counter)
             print('\n')
-            print('No letter identified. Please, try again.').upper()
         elif len(guess) > 1 and guess.isalpha() == True:
             print(f'Used letters: {used_letters}', end='\n')
+            print('Guess one letter at a time. Try again.').upper()
             hangman_design(error_counter)
             print('\n')
-            print('Guess one letter at a time. Try again.').upper()
         else:
             print(f'Used letters: {used_letters}', end='\n')
+            print(f'Sorry, {guess} is not a valid answer. Please try again.')
             hangman_design(error_counter)
             print('\n')
-            print(f'Sorry, {guess} is not a valid answer. Please try again.')
 
     if error_counter == 6:
         endgame('lose', data)
