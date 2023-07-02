@@ -79,23 +79,25 @@ def choose_word(data):
     retrieves one random word based on the user’s choice"""
 
     word = random.choice(words)
+    acceptable_words = []
+
     if data == 'e':
-        while len(word) >= 4:
-            word = random.choice(words)
-        else:
-            return word.upper()
+        for word in words:
+            if len(word) <= 4:
+                acceptable_words.append(word)
+        return random.choice(acceptable_words).upper()
 
     elif data == 'm':
-        while len(word) < 5 or len(word) >= 6:
-            word = random.choice(words)
-        else:
-            return word.upper()
+        for word in words:
+            if len(word) == 5:
+                acceptable_words.append(word)
+        return random.choice(acceptable_words).upper()
 
     elif data == 'h':
-        while len(word) <= 6:
-            word = random.choice(words)
-        else:
-            return word.upper()
+        for word in words:
+            if len(word) >= 6:
+                acceptable_words.append(word)
+        return random.choice(acceptable_words).upper()
 
 
 def game_structure(data):
@@ -276,12 +278,14 @@ def hangman_design(data):
 def rules():
     """Set of instructions to be print out once the game starts."""
 
+    print('\n')
     print('These are the rules of the game:')
     print('1. You can only chose one letter each time.')
     print('2. You cannot guess the whole word at once.')
     print('3. You can make five wrong guesses.')
     print('4. If you the whole doll is hanging, you lost the game.')
-    print('5. Good luck!')
+    print('5. You can type "exit" at any time to exit the game.')
+    print('6. Good luck!')
 
 
 main_screen()
