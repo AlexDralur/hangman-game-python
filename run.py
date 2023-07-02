@@ -152,6 +152,8 @@ def game_structure(data):
             print('Guess one letter at a time. Try again.').upper()
             hangman_design(error_counter)
             print('\n')
+        elif guess == "exit":
+            exit()
         else:
             print(f'Used letters: {used_letters}', end='\n')
             print(f'Sorry, {guess} is not a valid answer. Please try again.')
