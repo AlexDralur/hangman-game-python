@@ -26,9 +26,9 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ​
 ## **Planning stage**
 ### **Target Audiences:**
-* Users interested in quiz games.
-* Users interested in general knowledge.
-* Users interested in trying to score higher than their friends.
+* Users interested in hangman games.
+* Users interested in quick games to spend some time.
+* Users interested in challenge themselves with their words knowledge.
 ​
 ### **User Stories:**
 * As a user, I want to have fun.
