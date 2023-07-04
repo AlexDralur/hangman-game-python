@@ -167,13 +167,19 @@ Only error related to the ASCII graphics (W605)
 ​
 ## **Bugs**
 
-Problem 🐞: 
+Problem 🐞: Game continued even after six wrong guesses.
 
-Cause🛠: 
+Cause🛠: Input code would run twice within the while loop.
 
-Resolution✅: 
-*** 
+Resolution✅: Removed the unnecessary input call.
+***
 
+Problem 🐞: If a incorrect key was used to chose the difficulty the game was rebooted.
+
+Cause🛠: The function being called was wrong.
+
+Resolution✅: Change the structure of function and function being called.
+***
 
 ## **Deployment**
 I deployed the page on Heroku via the following procedure: -
