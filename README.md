@@ -86,13 +86,77 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ​
 ## **Testing Phase**
 ​
-Implementation: 
+Implementation: Main screen offers the user the option to play the game.
 
-Test: 
+Test: Access the game and pressed the correct option to start the game.
 
-Result: 
+Result: Game started.
 *** 
-​
+
+Implementation: Prevent user of typing wrong keys while starting the game.
+
+Test: Tried wrong keys as input.
+
+Result: Game informs that the keys are incorrect and did not started.
+
+*** 
+
+Implementation: Offer the user the option to exit the game in the main screen.
+
+Test: Typed "exit" on the main screen.
+
+Result: Game finished.
+*** ​
+
+Implementation: Once the game starts, user can choose the difficulty.
+
+Test: Tried the correct inputs and wrong ones.
+
+Result: The correct ones allowed the game to start with the parameters considered for the chosen level, wrong keys did not allow the game to start.
+*** ​
+
+Implementation: Once the game starts, the user can choose one letter.
+
+Test: Started the game and guessed a word.
+
+Result: Game continued.
+*** ​
+
+Implementation: Prevent user to type a full word or numbers.
+
+Test: Typed a random words and numbers.
+
+Result: Game informed that those inputs were not accepted and requested user to type just a letter.
+*** ​
+
+Implementation: Game allows to user to make five wrong guesses before finishing the game.
+
+Test: Made five wrong guesses.
+
+Result: On the sixth wrong guess, the game finished.
+*** ​
+
+Implementation: Allow user to finish the game at any moment during the game, typing "exit".
+
+Test: Typed "exit" during the game.
+
+Result: Game finished.
+*** ​
+
+Implementation: Allow user to replay the game when the game finishes.
+
+Test: Finished the game, losing and winning, and tried to replay the game.
+
+Result: Game rebooted.
+*** ​
+
+Implementation: Allow user to exit the game when the game finishes.
+
+Test: Finished the game, losing and winning, and tried to exit the game.
+
+Result: Exited the game.
+*** ​​
+
 * Validators
 
 . Python Linter [Python Linter Validator](https://pep8ci.herokuapp.com/)
