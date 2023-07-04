@@ -86,6 +86,7 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ​
 ## **Testing Phase**
 ​
+
 Implementation: Main screen offers the user the option to play the game.
 
 Test: Access the game and pressed the correct option to start the game.
@@ -159,8 +160,10 @@ Result: Exited the game.
 ## **Validators**
 
 . Python Linter [Python Linter Validator](https://pep8ci.herokuapp.com/)
-![Python Linter Validator screenshot - run.py]()
-![Python Linter Validator screenshot - words.py](assets/images-docs/rules_screenshot.png)
+
+Only error related to the ASCII graphics (W605)
+![Python Linter Validator screenshot - run.py](assets/images-docs/run_py_pyhon_linter.png)
+![Python Linter Validator screenshot - words.py](assets/images-docs/words_py_python_linter.png)
 ​
 ## **Bugs**
 
