@@ -48,23 +48,26 @@ def change_difficulty(data):
     """Check which level of difficulty the user has
     chosen and if it is one of the correct keys"""
 
-    if data.lower() == 'e':
+    if data.upper() == 'E':
         print('You chose the difficult: easy.')
         rules()
         random_word = choose_word('e')
         game_structure(random_word)
 
-    elif data.lower() == 'm':
+    elif data.upper() == 'M':
         print('You chose the difficult: medium.')
         rules()
         random_word = choose_word('m')
         game_structure(random_word)
 
-    elif data.lower() == 'h':
+    elif data.upper() == 'H':
         print('You chose the difficult: hard.')
         rules()
         random_word = choose_word('h')
         game_structure(random_word)
+
+    elif data.upper() == "EXIT":
+        exit()
 
     else:
         if data.isalpha() is False:
