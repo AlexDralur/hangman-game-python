@@ -18,30 +18,30 @@ def main_screen():
                                        |___/                       """)
     hangman_design(6)
     print('WELCOME TO THE HANGMAN')
-    play = input('Would you like to play? Press 1: ')
-    check_difficulty_choice(play)
+    print('\n')
+    print('Type "P" to Play.')
+    play = input('Type "Exit" to leave the game.').upper()
+    start_game(play)
 
 
-def check_difficulty_choice(data):
+def start_game(data):
     """Function to check if the user has
     pressed the correct key to start the game."""
 
-    try:
-        answer = int(data)
+    while data != 'P' and data != 'EXIT':
+        print(f'Sorry, {data} is not a valid answer.')
+        print('Type "P" to Play or "exit" to leave the game.')
+        data = input('Try again: ').upper()
+        start_game(data)
 
-        if answer == 1:
-            print('Choose one of the following letters for the difficulty:')
-            difficulty = input(
-                '"E" for easy, "M" for medium or "H" for hard: ')
-            change_difficulty(difficulty)
+    if data == 'P':
+        print('Choose one of the following letters for the difficulty:')
+        difficulty = input(
+            '"E" for easy, "M" for medium or "H" for hard: ')
+        change_difficulty(option)
 
-    except ValueError:
-        second_try = input(f'{data} is not a number, please try again: ')
-        check_answer(second_try)
-
-    else:
-        second_try = input(f'Sorry, {data} is not a valid answer. Try again: ')
-        check_answer(second_try)
+    elif data == "EXIT":
+        exit()
 
 
 def change_difficulty(data):
