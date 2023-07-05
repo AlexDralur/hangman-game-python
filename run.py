@@ -38,7 +38,7 @@ def start_game(data):
         print('Choose one of the following letters for the difficulty:')
         difficulty = input(
             '"E" for easy, "M" for medium or "H" for hard: ')
-        change_difficulty(option)
+        change_difficulty(difficulty)
 
     elif data == "EXIT":
         exit()
