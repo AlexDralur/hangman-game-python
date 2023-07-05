@@ -181,6 +181,20 @@ Cause🛠: The function being called was wrong.
 Resolution✅: Change the structure of function and function being called.
 ***
 
+Problem 🐞: Start game function entering a loop without continuing the game.
+
+Cause🛠: The conditions for the while loop where not considered because of the logic applied.
+
+Resolution✅: Change the condition (from OR to AND).
+***
+
+Problem 🐞: Endgame function was breaking the game.
+
+Cause🛠: Since the function is the base to the end, either winning or losing, another parameter was necessary to differentiate.
+
+Resolution✅: Second paramenter added to run the function.
+***
+
 ## **Deployment**
 I deployed the page on Heroku via the following procedure: -
 ​
