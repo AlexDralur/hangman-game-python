@@ -83,6 +83,7 @@ The Hangman is an application made on Python. It is a game that challenges the u
 * There is two outcomes of the game: the user can either win or lose. If they win, they are greeted with a congratulations message and an invitation to play again. If the user loses, they receive a Game Over message, the information of what was the word and also the invitation to replay the game.
 
 ![Congratulations screenshot](assets/images-docs/congrats_screenshot.png)
+
 ![Game Over screenshot](assets/images-docs/game_over_screenshot.png)
 
 ​
@@ -170,6 +171,7 @@ Result: Exited the game.
 
 Only error related to the ASCII graphics (W605)
 ![Python Linter Validator screenshot - run.py](assets/images-docs/run_py_python_linter.png)
+
 ![Python Linter Validator screenshot - words.py](assets/images-docs/words_py_python_linter.png)
 
 ## **Bugs**
