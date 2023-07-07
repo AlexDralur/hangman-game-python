@@ -1,6 +1,6 @@
 # **The Hangman**
 ## **Overview**
-The Hangman is an application made on Python. It is a game that challenges the user to get the correct word within six chances. It time the user guesses incorrectly, a part of the doll is added to the hangman design, if all parts are completely the user loses the game.
+The Hangman is an application made on Python. It is a game that challenges the user to get the correct word within six chances. It time the user guesses incorrectly, a part of the doll is added to the hangman design, if all parts are completed the user loses the game.
 
 ![Main screen screenshot](assets/images-docs/main_screen.png)
 ​
@@ -69,7 +69,9 @@ The Hangman is an application made on Python. It is a game that challenges the u
 * The game starts with three main parts: the hangman design (empty, because there is no mistakes yet), the random word hidden and the request for the user to guess a letter. Once the user guesses the first letter, two more items are added to the game: the used letters lists (so the user can see which letters they already guessed) and the amount of mistakes they made.
 
 ![Game screenshot 1](assets/images-docs/game_screenshot_1.png)
+
 ![Game screenshot 2](assets/images-docs/game_screenshot_2.png)
+
 ![Game screenshot 3](assets/images-docs/game_screenshot_3.png)
 
 #### *Congratulations and Game Over:*

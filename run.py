@@ -185,19 +185,6 @@ def endgame(data, word):
                                                     """)
         hangman_design(6)
         print(f'Sorry, you ran out of tries. The word was {word}.')
-        replay = input(
-            'Type "Y" to play again or "Exit" to leave: ').upper()
-
-        while replay != 'Y' or replay != 'EXIT':
-            print('Sorry, that is not a validate input.')
-            replay = input(
-                'Type "Y" to play again or "exit" to leave: ').upper()
-
-            if replay == 'Y':
-                os.system('clear')
-                main_screen()
-            elif replay == 'EXIT':
-                exit()
 
     elif data == "won":
         print("""
@@ -208,19 +195,29 @@ def endgame(data, word):
   \____\___/|_| \_|\____|_| \_\/_/   \_\_| |____/(_)
                                                     """)
         print(f'Congratulations, you guessed "{word}".')
+
+    restart_game()
+
+
+def restart_game():
+    """Function that restarts the game"""
+
+    replay = ''
+
+    while replay is not 'Y' and replay is not 'EXIT':
         replay = input(
-            'Type "Y" to play again or "exit" to leave: ').upper()
+            'Type "P" to play it again or "exit" to leave: ').upper()
 
-        while replay != 'Y' or replay != 'EXIT':
+        if replay == 'Y':
+            os.system('clear')
+            main_screen()
+
+        elif replay == 'EXIT':
+            exit()
+
+        else:
             print('Sorry, that is not a validate input.')
-            replay = input(
-                'Type "Y" to play it again or "exit" to leave: ').upper()
 
-            if replay == 'Y':
-                os.system('clear')
-                main_screen()
-            elif replay == 'EXIT':
-                exit()
 
 
 def hangman_design(data):
