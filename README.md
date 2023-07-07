@@ -233,6 +233,6 @@ You can find the game live via the following URL - [live game](https://hangman-a
 ​
 ### **Content:**
 
-. Words taken from the words.txt [Github](https://github.com/Xethron/Hangman) from Xethron.
-. Word Graphics (ASCII art) taken from [TextKool](https://textkool.com/en)
-. Code to run through the hidden word and only the letter which was guessed, if correct, from the Python tutorial [Youtube](https://www.youtube.com/watch?v=m4nEnsavl6w) from Kite.
+* Words taken from the words.txt [Github](https://github.com/Xethron/Hangman) from Xethron.
+* Word Graphics (ASCII art) taken from [TextKool](https://textkool.com/en)
+* Code to run through the hidden word and only the letter which was guessed, if correct, from the Python tutorial [Youtube](https://www.youtube.com/watch?v=m4nEnsavl6w) from Kite.
