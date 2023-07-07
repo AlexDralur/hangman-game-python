@@ -169,7 +169,7 @@ Result: Exited the game.
 . Python Linter [Python Linter Validator](https://pep8ci.herokuapp.com/)
 
 Only error related to the ASCII graphics (W605)
-![Python Linter Validator screenshot - run.py](assets/images-docs/run_py_pyhon_linter.png)
+![Python Linter Validator screenshot - run.py](assets/images-docs/run_py_python_linter.png)
 ![Python Linter Validator screenshot - words.py](assets/images-docs/words_py_python_linter.png)
 
 ## **Bugs**
