@@ -1,6 +1,6 @@
 # **The Hangman**
 ## **Overview**
-The Hangman is an application made on Python. It is a game that challenges the user to get the correct word within six chances. It time the user guesses incorrectly, a part of the doll is added to the hangman design, if all parts are completed the user loses the game.
+The Hangman is an application made on Python. It is a game that challenges the user to get the correct word within six chances. Each time the user guesses incorrectly, a part of the doll is added to the hangman design, if all parts are completed the user loses the game.
 
 ![Main screen screenshot](assets/images-docs/main_screen.png)
 ​
@@ -10,6 +10,7 @@ The Hangman is an application made on Python. It is a game that challenges the u
     * [***Target Audiences***](#target-audiences)
     * [***User Stories***](#user-stories)
     * [***Site Aims***](#site-aims)
+    * [***Game Structure***](#game-structure)
 1. [**Current Features**](#current-features)
     * [***Main Screen***](#main-screen)
     * [***Difficulty selection***](#difficulty-selection)
@@ -28,7 +29,7 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ### **Target Audiences:**
 * Users interested in hangman games.
 * Users interested in quick games to spend some time.
-* Users interested in challenge themselves with their words knowledge.
+* Users interested in challenge themselves with their word knowledge.
 ​
 ### **User Stories:**
 * As a user, I want to have fun.
@@ -43,14 +44,17 @@ The Hangman is an application made on Python. It is a game that challenges the u
 * To provide a fun game.
 * To create a challenge for the user.
 * To provide an excellent user experience without any errors or bugs.
-​
+
+### **Game Structure:**
+![Game Structure](assets/images-docs/game_structure.png)
+
 ## **Current Features**
 ​
 #### *Main Screen:*
 
 * Main screen of the game. User can choose to start the game.
 
-![Main screen screenshor](assets/images-docs/main_screen.png)
+![Main screen screenshot](assets/images-docs/main_screen.png)
 
 #### *Difficulty selection:*
 
@@ -84,7 +88,8 @@ The Hangman is an application made on Python. It is a game that challenges the u
 ​
 ## **Future-Enhancements**
 ​
-* Color can be added to the game to provide a better user experience. 
+* Color could be added to the game to enhance the user experience.
+* Store the game on a server so the game could be played online without a necessity of a terminal.
 ​
 ## **Testing Phase**
 ​
@@ -166,12 +171,12 @@ Result: Exited the game.
 Only error related to the ASCII graphics (W605)
 ![Python Linter Validator screenshot - run.py](assets/images-docs/run_py_pyhon_linter.png)
 ![Python Linter Validator screenshot - words.py](assets/images-docs/words_py_python_linter.png)
-​
+
 ## **Bugs**
 
 Problem 🐞: Game continued even after six wrong guesses.
 
-Cause🛠: Input code would run twice within the while loop.
+Cause🛠: The input code was running twice within the while loop.
 
 Resolution✅: Removed the unnecessary input call.
 ***
@@ -180,28 +185,28 @@ Problem 🐞: If a incorrect key was used to chose the difficulty the game was r
 
 Cause🛠: The function being called was wrong.
 
-Resolution✅: Change the structure of function and function being called.
+Resolution✅: Change the structure of the function and the function being called.
 ***
 
 Problem 🐞: Start game function entering a loop without continuing the game.
 
 Cause🛠: The conditions for the while loop where not considered because of the logic applied.
 
-Resolution✅: Change the condition (from OR to AND).
+Resolution✅: Change the condition from OR to AND.
 ***
 
 Problem 🐞: Endgame function was breaking the game.
 
 Cause🛠: Since the function is the base to the end, either winning or losing, another parameter was necessary to differentiate.
 
-Resolution✅: Second paramenter added to run the function.
+Resolution✅: A second parameter was added to run the function.
 ***
 
 ## **Deployment**
-I deployed the page on Heroku via the following procedure: -
+I deployed the application on Heroku via the following procedure: -
 ​
 1. Push the code to the Github [repository](https://github.com/AlexDralur/hangman-game-python).
-2. Log in or Sign up to Heroku where you need to create a new app.
+2. Log in or sign up to Heroku where you need to create a new app.
 3. Select a unique name.
 4. In the settings tab reveal the config vars, for this project one had to be added per Code Institutes guidance.
 5. For KEY, input PORT and for VALUE, input 8000 and click add.
@@ -219,7 +224,7 @@ You can find the game live via the following URL - [live game](https://hangman-a
 ***
 ​
 ## **Tech**
-- Python
+- Python.
 ​
 ## **Credits**
 ### **Honorable mentions**
