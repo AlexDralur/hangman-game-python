@@ -178,7 +178,7 @@ def game_structure(data):
             hangman_design(error_counter)
             print('\n')
 
-        elif guess == "EXIT":
+        elif guess == "QUIT":
             exit()
 
         elif len(guess) > 1 and guess.isalpha() is True:
