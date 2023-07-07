@@ -204,6 +204,13 @@ Cause🛠: Since the function is the base to the end, either winning or losing, 
 Resolution✅: A second parameter was added to run the function.
 ***
 
+Problem 🐞: Used letters list was being printed with brackets.
+
+Cause🛠: The print statement was not being called with the correct commands.
+
+Resolution✅: Correct commands added.
+***
+
 ## **Deployment**
 I deployed the application on Heroku via the following procedure: -
 ​
