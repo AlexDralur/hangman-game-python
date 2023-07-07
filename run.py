@@ -129,13 +129,13 @@ def game_structure(data):
     while error_counter < 6:
         print(hidden_word)
         guess = input('Guess a letter: ').upper()
+        print('\n')
 
         if guess.isalpha() and len(guess) == 1:
 
             if guess in used_letters:
                 print('Used letters: ', end='')
                 print(*used_letters, sep=', ')
-                print('\n')
                 print(f'Sorry, {guess} has already been used. Try again.')
                 hangman_design(error_counter)
                 print('\n')
@@ -154,7 +154,6 @@ def game_structure(data):
 
                 print('Used letters: ', end='')
                 print(*used_letters, sep=', ')
-                print('\n')
                 print('Good guess. Try again.')
                 hangman_design(error_counter)
                 print('\n')
@@ -164,7 +163,6 @@ def game_structure(data):
                 error_counter += 1
                 print('Used letters: ', end='')
                 print(*used_letters, sep=', ')
-                print('\n')
 
                 if error_counter == 1:
                     print(f'You have made {error_counter} mistake.')
@@ -180,7 +178,6 @@ def game_structure(data):
         elif len(guess) < 1:
             print('Used letters: ', end='')
             print(*used_letters, sep=', ')
-            print('\n')
             print('No letter identified. Please, try again.')
             hangman_design(error_counter)
             print('\n')
@@ -191,7 +188,6 @@ def game_structure(data):
         elif len(guess) > 1 and guess.isalpha() is True:
             print('Used letters: ', end='')
             print(*used_letters, sep=', ')
-            print('\n')
             print('Guess one letter at a time. Try again.')
             hangman_design(error_counter)
             print('\n')
@@ -199,7 +195,6 @@ def game_structure(data):
         else:
             print('Used letters: ', end='')
             print(*used_letters, sep=', ')
-            print('\n')
             print(f'Sorry, {guess} is not a valid answer. Please try again.')
             hangman_design(error_counter)
             print('\n')
