@@ -133,7 +133,9 @@ def game_structure(data):
         if guess.isalpha() and len(guess) == 1:
 
             if guess in used_letters:
-                print(f'Used letters: {used_letters}', end='\n')
+                print('Used letters: ', end='')
+                print(*used_letters, sep=', ')
+                print('\n')
                 print(f'Sorry, {guess} has already been used. Try again.')
                 hangman_design(error_counter)
                 print('\n')
@@ -150,7 +152,9 @@ def game_structure(data):
                 if hidden_word == data:
                     endgame('won', data)
 
-                print(f'Used letters: {used_letters}', end='\n')
+                print('Used letters: ', end='')
+                print(*used_letters, sep=', ')
+                print('\n')
                 print('Good guess. Try again.')
                 hangman_design(error_counter)
                 print('\n')
@@ -158,7 +162,9 @@ def game_structure(data):
             else:
                 used_letters.append(guess)
                 error_counter += 1
-                print(f'Used letters: {used_letters}', end='\n')
+                print('Used letters: ', end='')
+                print(*used_letters, sep=', ')
+                print('\n')
 
                 if error_counter == 1:
                     print(f'You have made {error_counter} mistake.')
@@ -172,7 +178,9 @@ def game_structure(data):
                 print('\n')
 
         elif len(guess) < 1:
-            print(f'Used letters: {used_letters}', end='\n')
+            print('Used letters: ', end='')
+            print(*used_letters, sep=', ')
+            print('\n')
             print('No letter identified. Please, try again.')
             hangman_design(error_counter)
             print('\n')
@@ -181,13 +189,17 @@ def game_structure(data):
             exit()
 
         elif len(guess) > 1 and guess.isalpha() is True:
-            print(f'Used letters: {used_letters}', end='\n')
+            print('Used letters: ', end='')
+            print(*used_letters, sep=', ')
+            print('\n')
             print('Guess one letter at a time. Try again.')
             hangman_design(error_counter)
             print('\n')
 
         else:
-            print(f'Used letters: {used_letters}', end='\n')
+            print('Used letters: ', end='')
+            print(*used_letters, sep=', ')
+            print('\n')
             print(f'Sorry, {guess} is not a valid answer. Please try again.')
             hangman_design(error_counter)
             print('\n')
