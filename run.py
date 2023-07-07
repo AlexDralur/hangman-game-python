@@ -20,7 +20,7 @@ def main_screen():
     print('WELCOME TO THE HANGMAN')
     print('\n')
     print('Type "P" to Play.')
-    play = input('Type "Exit" to leave the game.').upper()
+    play = input('Type "Q" to leave the game.').upper()
     start_game(play)
 
 
@@ -28,9 +28,9 @@ def start_game(data):
     """Function to check if the user has
     pressed the correct key to start the game."""
 
-    while data != 'P' and data != 'EXIT':
+    while data != 'P' and data != 'Q':
         print(f'Sorry, {data} is not a valid answer.')
-        print('Type "P" to Play or "exit" to leave the game.')
+        print('Type "P" to Play or "Q" to leave the game.')
         data = input('Try again: ').upper()
         start_game(data)
 
@@ -40,7 +40,7 @@ def start_game(data):
             '"E" for easy, "M" for medium or "H" for hard: ')
         change_difficulty(difficulty)
 
-    elif data == "EXIT":
+    elif data == "Q":
         exit()
 
 
@@ -66,7 +66,7 @@ def change_difficulty(data):
         random_word = choose_word('h')
         game_structure(random_word)
 
-    elif data.upper() == "EXIT":
+    elif data.upper() == "Q":
         exit()
 
     else:
@@ -124,6 +124,7 @@ def game_structure(data):
                 print(f'Sorry, {guess} has already been used. Try again.')
                 hangman_design(error_counter)
                 print('\n')
+
             elif guess in data:
                 used_letters.append(guess)
                 word_as_list = list(hidden_word)
@@ -137,29 +138,38 @@ def game_structure(data):
                 print('Good guess. Try again.')
                 hangman_design(error_counter)
                 print('\n')
+
             else:
                 used_letters.append(guess)
                 error_counter += 1
                 print(f'Used letters: {used_letters}', end='\n')
+
                 if error_counter == 1:
                     print(f'You have made {error_counter} mistake.')
+
                 else:
                     print(f'You have made {error_counter} mistakes.')
+
                 if error_counter < 6:
                     hangman_design(error_counter)
+
                 print('\n')
+
         elif len(guess) < 1:
             print(f'Used letters: {used_letters}', end='\n')
             print('No letter identified. Please, try again.')
             hangman_design(error_counter)
             print('\n')
+
+        elif guess == "EXIT":
+            exit()
+
         elif len(guess) > 1 and guess.isalpha() is True:
             print(f'Used letters: {used_letters}', end='\n')
             print('Guess one letter at a time. Try again.')
             hangman_design(error_counter)
             print('\n')
-        elif guess == "EXIT" or guess == '"EXIT"':
-            exit()
+
         else:
             print(f'Used letters: {used_letters}', end='\n')
             print(f'Sorry, {guess} is not a valid answer. Please try again.')
@@ -204,15 +214,15 @@ def restart_game():
 
     replay = ''
 
-    while replay is not 'Y' and replay is not 'EXIT':
+    while replay is not 'Y' and replay is not 'Q':
         replay = input(
-            'Type "P" to play it again or "exit" to leave: ').upper()
+            'Type "P" to play it again or "Q" to leave: ').upper()
 
         if replay == 'Y':
             os.system('clear')
             main_screen()
 
-        elif replay == 'EXIT':
+        elif replay == 'Q':
             exit()
 
         else:
@@ -299,7 +309,7 @@ def rules():
     print('2. You cannot guess the whole word at once.')
     print('3. You can make five wrong guesses.')
     print('4. If you the whole doll is hanging, you lost the game.')
-    print('5. You can type "exit" at any time to exit the game.')
+    print('5. You can type "QUIT" at any time to quit the game.')
     print('6. Good luck!')
 
 
