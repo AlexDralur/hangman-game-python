@@ -9,6 +9,8 @@ def main_screen():
     Allows user to start the game.
     """
 
+    os.system('clear')
+
     print("""
   _____ _            _   _
  |_   _| |__   ___  | | | | __ _ _ __   __ _ _ __ ___   __ _ _ __
@@ -20,6 +22,7 @@ def main_screen():
     print('WELCOME TO THE HANGMAN')
     print('\n')
     print('Type "P" to Play.')
+    print('Type "R" to view the rules.')
     play = input('Type "Q" to leave the game.').upper()
     start_game(play)
 
@@ -28,20 +31,24 @@ def start_game(data):
     """Function to check if the user has
     pressed the correct key to start the game."""
 
-    while data != 'P' and data != 'Q':
+    while data != 'P' and data != 'Q' and data != "R":
         print(f'Sorry, {data} is not a valid answer.')
-        print('Type "P" to Play or "Q" to leave the game.')
+        print('Type "P" to Play, "R" for Rules or "Q" to leave the game.')
         data = input('Try again: ').upper()
         start_game(data)
 
     if data == 'P':
+        print('\n')
         print('Choose one of the following letters for the difficulty:')
         difficulty = input(
-            '"E" for easy, "M" for medium or "H" for hard: ')
+        '"E" for easy, "M" for medium or "H" for hard: ')
         change_difficulty(difficulty)
 
     elif data == "Q":
         exit()
+
+    elif data == "R":
+        rules()
 
 
 def change_difficulty(data):
@@ -49,20 +56,14 @@ def change_difficulty(data):
     chosen and if it is one of the correct keys"""
 
     if data.upper() == 'E':
-        print('You chose the difficult: easy.')
-        rules()
         random_word = choose_word('e')
         game_structure(random_word)
 
     elif data.upper() == 'M':
-        print('You chose the difficult: medium.')
-        rules()
         random_word = choose_word('m')
         game_structure(random_word)
 
     elif data.upper() == 'H':
-        print('You chose the difficult: hard.')
-        rules()
         random_word = choose_word('h')
         game_structure(random_word)
 
@@ -70,9 +71,11 @@ def change_difficulty(data):
         exit()
 
     else:
+
         if data.isalpha() is False:
             repeat = input(f'Sorry, {data} is not a letter. Try again: ')
             change_difficulty(repeat)
+
         else:
             repeat = input(f'Sorry, {data} is not a valid letter. Try again: ')
             change_difficulty(repeat)
@@ -86,21 +89,30 @@ def choose_word(data):
     acceptable_words = []
 
     if data == 'e':
+
         for word in words:
+
             if len(word) <= 4:
                 acceptable_words.append(word)
+
         return random.choice(acceptable_words).upper()
 
     elif data == 'm':
+
         for word in words:
+
             if len(word) == 5:
                 acceptable_words.append(word)
+
         return random.choice(acceptable_words).upper()
 
     elif data == 'h':
+
         for word in words:
+
             if len(word) >= 6:
                 acceptable_words.append(word)
+
         return random.choice(acceptable_words).upper()
 
 
@@ -109,6 +121,7 @@ def game_structure(data):
     While the game is not won or finished, it requests an answer
     from the user and prints the relevant information."""
 
+    os.system('clear')
     error_counter = 0
     used_letters = []
     hidden_word = '_' * len(data)
@@ -119,6 +132,7 @@ def game_structure(data):
         guess = input('Guess a letter: ').upper()
 
         if guess.isalpha() and len(guess) == 1:
+
             if guess in used_letters:
                 print(f'Used letters: {used_letters}', end='\n')
                 print(f'Sorry, {guess} has already been used. Try again.')
@@ -129,11 +143,14 @@ def game_structure(data):
                 used_letters.append(guess)
                 word_as_list = list(hidden_word)
                 ind = [i for i, letter in enumerate(data) if letter == guess]
+
                 for index in ind:
                     word_as_list[index] = guess
                 hidden_word = "".join(word_as_list)
+
                 if hidden_word == data:
                     endgame('won', data)
+
                 print(f'Used letters: {used_letters}', end='\n')
                 print('Good guess. Try again.')
                 hangman_design(error_counter)
@@ -214,11 +231,11 @@ def restart_game():
 
     replay = ''
 
-    while replay is not 'Y' and replay is not 'Q':
+    while replay is not 'P' and replay is not 'Q':
         replay = input(
             'Type "P" to play it again or "Q" to leave: ').upper()
 
-        if replay == 'Y':
+        if replay == 'P':
             os.system('clear')
             main_screen()
 
@@ -227,7 +244,6 @@ def restart_game():
 
         else:
             print('Sorry, that is not a validate input.')
-
 
 
 def hangman_design(data):
@@ -311,6 +327,8 @@ def rules():
     print('4. If you the whole doll is hanging, you lost the game.')
     print('5. You can type "QUIT" at any time to quit the game.')
     print('6. Good luck!')
+    input('Press any key to return to the main screen')
+    main_screen()
 
 
 main_screen()
