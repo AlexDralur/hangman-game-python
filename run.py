@@ -39,11 +39,14 @@ def start_game(data):
 
     if data == 'P':
         print('\n')
-        print('Choose one of the following letters for the difficulty:')
-        difficulty = input('"E" for easy, "M" for medium or "H" for hard: ')
+        print('Type one of the following letters for the difficulty:')
+        print('"E" for easy, "M" for medium or "H" for hard.')
+        difficulty = input('You can also type "Q" to return to main screen.')
         change_difficulty(difficulty)
 
     elif data == "Q":
+        print('\n')
+        print('Thank you for playing the game.')
         exit()
 
     elif data == "R":
@@ -67,7 +70,7 @@ def change_difficulty(data):
         game_structure(random_word)
 
     elif data.upper() == "Q":
-        exit()
+        main_screen()
 
     else:
 
@@ -175,7 +178,7 @@ def game_structure(data):
 
                 print('\n')
 
-        elif len(guess) < 1:
+        elif len(guess) < 1 or guess.strip() == "":
             print('Used letters: ', end='')
             print(*used_letters, sep=', ')
             print('No letter identified. Please, try again.')
@@ -183,7 +186,7 @@ def game_structure(data):
             print('\n')
 
         elif guess == "QUIT":
-            exit()
+            main_screen()
 
         elif len(guess) > 1 and guess.isalpha() is True:
             print('Used letters: ', end='')
@@ -246,6 +249,8 @@ def restart_game():
             main_screen()
 
         elif replay == 'Q':
+            print('\n')
+            print('Thank you for playing the game.')
             exit()
 
         else:
