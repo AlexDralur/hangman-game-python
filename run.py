@@ -23,7 +23,7 @@ def main_screen():
     print('\n')
     print('Type "P" to Play.')
     print('Type "R" to view the rules.')
-    play = input('Type "Q" to leave the game.').upper()
+    play = input('Type "Q" to leave the game. ').upper()
     start_game(play)
 
 
@@ -41,7 +41,7 @@ def start_game(data):
         print('\n')
         print('Type one of the following letters for the difficulty:')
         print('"E" for easy, "M" for medium or "H" for hard.')
-        difficulty = input('You can also type "Q" to return to main screen.')
+        difficulty = input('You can also type "Q" to return to main screen. ')
         change_difficulty(difficulty)
 
     elif data == "Q":
@@ -336,7 +336,7 @@ def rules():
     print('2. You cannot guess the whole word at once.')
     print('3. You can make five wrong guesses.')
     print('4. If you the whole doll is hanging, you lost the game.')
-    print('5. You can type "QUIT" at any time to quit the game.')
+    print('5. You can type "QUIT" at any time to return to main screen.')
     print('6. Good luck!')
     input('Press any key to return to the main screen')
     main_screen()
