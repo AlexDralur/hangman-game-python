@@ -338,7 +338,7 @@ def rules():
     print('4. If you the whole doll is hanging, you lost the game.')
     print('5. You can type "QUIT" at any time to return to main screen.')
     print('6. Good luck!')
-    input('Press any key to return to the main screen')
+    input('Press "Enter" to return to the main screen. ')
     main_screen()
 
 
